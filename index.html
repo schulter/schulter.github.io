@@ -1,0 +1,2290 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" > <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9 ie8-fix" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" > <!--<![endif]-->
+    <head >
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUOUVJbGwACUVVRDgk="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script>
+                            <title>    Data Scientist - Resume editing
+</title>
+                                        <meta name="description" content="">
+                                                <link rel="shortcut icon" href="/favicon.ico">
+        
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/bundles/dyb/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bundles/dyb/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bundles/dyb/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="/bundles/dyb/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="/bundles/dyb/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="/bundles/dyb/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+                
+                                            <link href="/bundles/dyb/assets/css/app/Layout/logged.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/app.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/import.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/design-gallery.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/export.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/metadesc.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/proofreading-request.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/download-print.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/editbox.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/proofreading.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/followUp.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/preview-pdf.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                        <link href="/bundles/dyb/assets/css/app/Cv/Edit/premium-offers.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                            <link href="/bundles/dyb/assets/css/app/Partials/common.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+                    
+                    <script type="text/javascript">
+                                var _gaq = _gaq || [],
+    trackingParam = {
+        dyb: {
+            trackedUrl: null,
+            memberType: 'visitor'
+        },
+        stats: {
+            trackedUrl: null
+        }
+    };
+
+_gaq.push(
+        ['_setAccount', 'UA-4431557-1'],
+    ['_trackPageview'],
+
+        ['dyb._setAccount', 'UA-4431557-4'],
+    ['dyb._setDomainName', 'none'],
+    ['dyb._setAllowLinker', true]
+
+    );
+
+trackingParam.dyb.trackedUrl = '/visitor/cv/';
+                
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                }());
+            </script>
+        
+                    
+                            <script>
+                                        var require = {
+                        baseUrl: "/bundles/dyb/assets/js/build",
+                                                paths: {
+                            jquery: [
+                                '//code.jquery.com/jquery-2.2.4.min',
+                                'libs/jquery/jquery.min'
+                            ],
+                            //CDN resources
+                            angular: [
+                                '//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min',
+                                'libs/angular/angular.min'
+                            ],
+                            ngResource: [
+                                '//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-resource.min',
+                                'libs/angular/angular-resource.min'
+                            ],
+
+                            ngCookies: [
+                                '//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-cookies.min',
+                                'libs/angular/angular-cookies.min'
+                            ],
+                            ngRoute: [
+                                '//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-route.min',
+                                'libs/angular/angular-route.min'
+                            ],
+                            ngAnimate: [
+                                '//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-animate.min',
+                                'libs/angular/angular-animate.min'
+                            ],
+                            ngSanitize: [
+                                '//ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular-sanitize.min',
+                                'libs/angular/angular-sanitize.min'
+                            ],
+                            spin: "libs/ladda/spin.min",
+                                                        timeagoI18n: '/en_US/timeago/assets/translations',
+                            select2I18n: '/bundles/dyb/assets/js/build/libs/select2/select2_locale_us',
+                            angularI18n: 'libs/angular/i18n/angular-locale_en-us',
+                            beacon: "https://djtflbt20bdde.cloudfront.net/?.js"
+                        },
+                                                shim: {
+                            angular: {
+                                exports: "angular",
+                                deps: ['jquery']
+                            },
+                            ngAnimate: ['angular'],
+                            ngCookies: ['angular'],
+                            ngRoute: ['angular'],
+                            ngResource: ['angular'],
+                            ngSanitize: ['angular'],
+                            angularI18n: ['angular'],
+                            'libs/bootstrap/bootstrap.min': ['jquery'],
+                            'libs/star-rating.min': ['jquery'],
+                            timeagoI18n: ['libs/jquery/jquery.timeago.min'],
+                            select2I18n: ['libs/select2/select2.min']
+                        },
+                        waitSeconds: 30,
+                        urlArgs: "v=5.1.25"
+                    };
+                </script>
+            
+                <script>
+        var initialState = {"cv":{"options":{"published":true,"referencing":true,"culture":"en_US","description":"I am a passionate software developer and machine learning enthusiast, currently working in computational Biology. With my work, I want to make a difference and learn new things along the way."},"title":{"value":"Data Scientist"},"professionalPosition":{"availability":"OPEN","professionalStatus":"F_ETUD"},"links":{"elements":[{"title":"Github","toDel":false,"id":901381,"sort":0,"type":"Github","link":"https:\/\/github.com\/schulter"},{"title":"LinkedIn","toDel":false,"id":901382,"sort":1,"type":"Linked In","link":"https:\/\/www.linkedin.com\/in\/roman-schulte-sasse-9b568a155\/"}]},"tags":{"elements":[{"id":864392,"title":"data scientist","pos":0},{"id":864393,"title":"software engineer","pos":1},{"id":864394,"title":"machine learning scientist","pos":2},{"id":864395,"title":"","pos":3}]},"contacts":{"elements":[{"$views":[]},{"$views":[]},{"$views":[]},{"$views":[]}],"skype":"roman.schulte.sasse","form":true,"public_email":"sasse@molgen.mpg.de","address":{"street":"","zipCode":"","city":"","country":"DE"}},"positions":{"2":["skills","educations"],"1":["experiences","portfolios","interests"]},"id":1905824,"main":true,"color":"50A3D9","completion":0.93,"owner":{"isPremium":false,"confirmed":true,"offer":{"nbPortfolios":1,"accessToLimitedDesigns":false,"haveCustomColors":false,"canUploadCv":false,"hasMessageEventsAccess":false},"id":1839997,"login":"schulte.roman@live.de","objective":"changeJob","firstname":"Roman","lastname":"Schulte-Sasse"},"userInformation":{"$views":[],"file":"\/var\/users\/_\/2019\/5\/25\/16\/1839997\/avatar\/1905824\/avatar_cp_630.jpg","birthdate":{"day":11,"month":1,"year":"1989"},"avatars":{"tiny":"https:\/\/www.doyoubuzz.com\/var\/users\/_\/2019\/5\/25\/16\/1839997\/avatar\/1905824\/avatar_tn.jpg","normal":"https:\/\/www.doyoubuzz.com\/var\/users\/_\/2019\/5\/25\/16\/1839997\/avatar\/1905824\/avatar_cp.jpg","big":"https:\/\/www.doyoubuzz.com\/var\/users\/_\/2019\/5\/25\/16\/1839997\/avatar\/1905824\/avatar_cp_big.jpg","cp_630":"https:\/\/www.doyoubuzz.com\/var\/users\/_\/2019\/5\/25\/16\/1839997\/avatar\/1905824\/avatar_cp_big.jpg"},"haveDrivingLicence":true,"countryId":54},"presentation":{"$views":[],"text":"I am a passionate software developer and machine learning enthusiast, currently working in computational Biology. With my work, I want to make a difference and learn new things along the way. \nI am amazed by nature and want to understand how these systems work.","home":true},"experiences":[{"$views":[],"range":{"start":{"month":"08","year":"2015"},"end":{"month":"12","year":"2015"}},"id":6402592,"company":"Humboldt Universit\u00e4t zu Berlin","city":"","logo":"\/var\/f\/f-\/81\/f-81rI9OipJFwklfnsCYD74AMGHLyeN0BcU-h8E6xqz5agR_tn.png","logos":{"master":"\/var\/f\/f-\/81\/f-81UtgDlPb0AnyXNFS28OHThKo-uJ7QBe4cmRILjZw_master.png","tn":"\/var\/f\/f-\/81\/f-81rI9OipJFwklfnsCYD74AMGHLyeN0BcU-h8E6xqz5agR_tn.png","mid":"\/var\/f\/f-\/81\/f-81eaS79pXmkJ0N4nQlMFgTbjcEGowxVOKZ6qrYiC5PfB_mid.png","big":"\/var\/f\/f-\/81\/f-81inaGftxbpwve45T0kz2SJOMRIyq7PYW8l6gD3uACQH_big.png"},"home":true,"sort":0,"title":"Student Research Assistant","slug":"humboldt-universitat-zu-berlin","missions":[{"toDel":false,"id":23661633,"sort":0,"description":"Developed motion tracking system for ultrasound images in Matlab."},{"toDel":false,"id":23661634,"sort":1,"description":"The work led to a semi-automated tracking software that was used in scientific studies of tendon adaptation to training in the sports faculty of HU Berlin."}],"results":[],"objectives":[],"contexts":[],"environments":[]},{"$views":[],"range":{"start":{"month":"01","year":"2016"},"end":{"month":"11","year":"2016"}},"id":6402612,"company":"Max Planck Institute for molecular Genetics","city":"","logo":"\/var\/f\/f-\/81\/f-81lutPBGoJRv43aK_HQSYgCeEwhZi5kx6OrVc9bUWj187_tn.jpeg","logos":{"master":"\/var\/f\/f-\/81\/f-814DoNZ9WpnREs3gJcwUtVQlOkMSeHGA82bFTKIaY_master.jpeg","tn":"\/var\/f\/f-\/81\/f-81lutPBGoJRv43aK_HQSYgCeEwhZi5kx6OrVc9bUWj187_tn.jpeg","mid":"\/var\/f\/f-\/81\/f-81v_Ksxu3w-69So0rWHzD2QiNVtL5XPey8FRcqYMJ7Cn_mid.jpeg","big":"\/var\/f\/f-\/81\/f-81TqM5Fk_agwi-zo0x6QHCJuZVDKL8BRIrGnjblYp4fE_big.jpeg"},"home":true,"sort":0,"title":"Student Research Assistant","slug":"max-planck-institute-for-molecular-genetics","missions":[{"toDel":false,"id":23661688,"sort":0,"description":"I developed unsupervised deep learning framework to recognize patterns in DNA sequences as master thesis."},{"toDel":false,"id":23661689,"sort":1,"description":"I first got into touch with deep learning frameworks Theano and Tensorflow for that work."},{"toDel":false,"id":23661782,"sort":2,"description":"Worked on convolutional Restricted Boltzmann Machines (cRBMs) which are part of the earlier generation of deep learning models"}],"results":[],"objectives":[],"contexts":[],"environments":[]},{"$views":[],"range":{"start":{"month":"01","year":"2013"},"end":{"month":"09","year":"2015"}},"id":6402600,"company":"FUmanoids","city":"","logo":"\/var\/f\/f-\/81\/f-818faN_xvQ1t7DBz5Rh4WGyLlSkKArF2epuYsboIcnj9J_tn.png","logos":{"master":"\/var\/f\/f-\/81\/f-81cOplk0xtyRYVi6j4rFMAUDqTh9Lg3CeHmPGZQua_master.png","tn":"\/var\/f\/f-\/81\/f-818faN_xvQ1t7DBz5Rh4WGyLlSkKArF2epuYsboIcnj9J_tn.png","mid":"\/var\/f\/f-\/81\/f-819wM4G_BRAiZLDzg0qkUryHPXCbKFa2J3QSon7lspEm_mid.png","big":"\/var\/f\/f-\/81\/f-811DMNAyqjgvpb_BkWLtreOJUYhcRH9m2fzEaCoTZun8_big.png"},"link":"http:\/\/www.fumanoids.de\/","home":true,"sort":2,"title":"Developer","slug":"fumanoids","description":"The soccer playing humanoid robots of Freie Universit\u00e4t Berlin","missions":[{"toDel":false,"id":23661668,"sort":0,"description":"Developed localization framework for humanoid soccer robots"},{"toDel":false,"id":23661669,"sort":1,"description":"Developed a machine learning approach for ball detection on the pitch (SVM based)"},{"toDel":false,"id":23661670,"sort":2,"description":"Implemented basic machine learning models in the framework (support vector machines, neural networks, linear models)"},{"toDel":false,"id":23661671,"sort":3,"description":"Programmed in C++ with own framework and focus on high performance"}],"results":[],"objectives":[],"contexts":[],"environments":[]},{"$views":[],"range":{"start":{"month":"05","year":"2009"},"end":{"month":"08","year":"2009"}},"id":6402590,"company":"IVU Traffic Technologies","city":"","logo":"\/var\/f\/f-\/81\/f-81WoGnMc4bSZrThF6PAsEwR-3gIk9DyJf7uz1O0Clq5xY_tn.jpeg","logos":{"master":"\/var\/f\/f-\/81\/f-81EYkytRzgI-VmD2TbWrU9c4X0xK_vM3SLehuCw6j_master.jpeg","tn":"\/var\/f\/f-\/81\/f-81WoGnMc4bSZrThF6PAsEwR-3gIk9DyJf7uz1O0Clq5xY_tn.jpeg","mid":"\/var\/f\/f-\/81\/f-819sfMWGH6mnqBR7pZUItyCO84hjozVlaT50eKviF_XL_mid.jpeg","big":"\/var\/f\/f-\/81\/f-81k0srVRvlPh73G2m8jTEtay_FXH4AqOicZW1z-oUwup_big.jpeg"},"home":true,"sort":3,"title":"Intern","slug":"ivu-traffic-technologies","missions":[{"toDel":false,"id":23661628,"sort":0,"description":"Helped in the build team"},{"toDel":false,"id":23661629,"sort":1,"description":"First experience with subversion, maven, make"}],"results":[],"objectives":[],"contexts":[],"environments":[]}],"educations":[{"$views":[],"range":{"start":{"month":"01","year":"2017"},"end":{"year":"-1"}},"id":3888242,"schoolName":"Max Planck Institute for molecular Genetics","home":true,"sort":0,"diploma":"PhD Program","slug":"phd-program-max-planck-institute-for-molecular-genetics-2017","description":"I use machine learning models to learn about molecular mechanisms leading to disease. For my work, I use graph deep learning tools to find genes involved in cancer progression.","details":[]},{"$views":[],"range":{"start":{"year":"2013"},"end":{"year":"2016"}},"id":3888192,"schoolName":"Freie Universit\u00e4t Berlin","home":true,"sort":1,"diploma":"Master of Science","slug":"master-of-science-freie-universitat-berlin-2013","description":"Computer Science master during which I took courses on machine learning, image-processing and statistics.","details":[]},{"$views":[],"range":{"start":{"year":"2009"},"end":{"year":"2013"}},"id":3888191,"schoolName":"Freie Universit\u00e4t Berlin","home":true,"sort":2,"diploma":"Bachelor Computer Science","slug":"bachelor-degree-freie-universitat-berlin-2009","description":"I studied computer science and took courses on machine learning and computer vision","details":[]}],"portfolios":[{"$views":[],"$type":"document","mediaCreatedAt":{"day":5,"month":9,"year":"2017"},"id":335505,"title":"Unsupervised learning of DNA sequence features using a convolutional restricted Boltzmann machine","path":"\/var\/f\/f-\/81\/f-81rtCH-O1jnlfc26REhV7MN9Xba3SQioFq_eGzTwx_master.pdf","slug":"unsupervised-learning-of-dna-sequence-features-using-a-convolutional-restricted-boltzmann-machine","description":"The results and implementation from my master thesis led to the publication of a tool (secomo) as preprint.","mediaUrl":"https:\/\/www.biorxiv.org\/content\/10.1101\/183095v2","home":true,"sort":-1}],"skills":[{"$views":[],"id":16569306,"home":true,"sort":0,"description":"Programming Languages","children":[{"$views":[],"id":16569307,"home":true,"sort":0,"description":"Python","level":100,"children":[]},{"$views":[],"id":16569309,"home":true,"sort":1,"description":"R","level":60,"children":[]},{"$views":[],"id":16569308,"home":true,"sort":2,"description":"C++","level":50,"children":[]},{"$views":[],"id":16569314,"home":true,"sort":3,"description":"Java","level":40,"children":[]},{"$views":[],"id":16569315,"home":true,"sort":4,"description":"Matlab","level":40,"children":[]}]},{"$views":[],"id":16569462,"home":true,"sort":1,"description":"Languages","children":[{"$views":[],"id":16569463,"home":true,"sort":0,"description":"German: Native","level":100,"children":[]},{"$views":[],"id":16569464,"home":true,"sort":1,"description":"English: Fluent","level":100,"children":[]},{"$views":[],"id":16569465,"home":true,"sort":4,"description":"French: Fluent","level":100,"children":[]}]},{"$views":[],"id":16569469,"home":true,"sort":2,"description":"Communication","children":[{"$views":[],"id":16569470,"home":true,"sort":0,"description":"Presentations","level":80,"children":[]},{"$views":[],"id":16569471,"home":true,"sort":1,"description":"Scientific Writing","level":60,"children":[]}]},{"$views":[],"id":16569493,"home":false,"sort":3,"description":"Technologies","children":[{"$views":[],"id":16569494,"home":false,"sort":0,"description":"Tensorflow\/Keras","level":80,"children":[]},{"$views":[],"id":16569495,"home":false,"sort":1,"description":"Theano","level":60,"children":[]},{"$views":[],"id":16569496,"home":false,"sort":2,"description":"Git","level":70,"children":[]},{"$views":[],"id":16569497,"home":false,"sort":3,"description":"Subversion","level":40,"children":[]},{"$views":[],"id":16569501,"home":false,"sort":4,"description":"Jupyter","level":80,"children":[]}]}],"interests":[{"$views":[],"id":1676402,"home":true,"description":"Sports","type":"sport","children":[{"$views":[],"id":3727544,"home":true,"sort":0,"description":"Beach Volleyball"},{"$views":[],"id":3727545,"home":true,"sort":1,"description":"Skiing"},{"$views":[],"id":3727546,"home":true,"sort":2,"description":"Hiking"}]}],"mobileOptions":[],"cvUrl":{"$views":[]}},"cvCompletion":0.93,"cvDownloadOptions":[],"pinnedElements":[],"style":{"color":"#50A3D9","design":{"cssPatterns":["\/bundles\/dyb\/assets\/css\/cv\/themesStyles\/:slug\/Web\/theme.css","\/var\/cache\/css\/Themes\/:slug\/Web\/color-:color.css"],"unlocked":true,"id":172,"name":"Minimal 2","slug":"minimal2","premium":false,"unlockable":false,"cols":2,"colors":["#50a3d9","#bf1f00","#1ca900","#ff8400","#5D2413","#d7116c","#9b00c8","#808080","#000000"],"type":1,"tags":["free","classic"],"initial":true,"token":"JGTIDJR5","haveColorGen":true,"engineVersion":3}},"widgetsConfig":{"cv":{"unique":true,"editable":true},"avatar":{"unique":true,"editable":true},"cvUrl":{"title":"cvurl.title","unique":true,"editable":true,"limited":true},"experiences":{"title":"Experience","sort":[{"elements":"missions","property":"sort"},{"elements":"results","property":"sort"},{"elements":"objectives","property":"sort"},{"elements":"contexts","property":"sort"},{"elements":"environments","property":"sort"}],"editable":true},"educations":{"title":"Education","sort":[{"elements":"details","property":"sort"}],"editable":true},"portfolios":{"title":"Portfolios","subtypes":["image","sound","video","diaporama","document"],"editable":true},"skills":{"title":"Skills","sort":[{"elements":"children","property":"sort"}],"editable":true},"interests":{"title":"Interests","sort":[{"elements":"children","property":"sort"}],"editable":true},"tags":{"title":"Keywords","unique":true,"home":true,"sort":[{"elements":"elements","property":"pos"}],"editable":true},"links":{"title":"My Links","unique":true,"home":true,"sort":[{"elements":"elements","property":"sort"}],"editable":true},"professionalPosition":{"title":"Professional Status","unique":true,"home":true,"undeletable":true,"editable":true},"presentation":{"title":"About Me ","unique":true,"home":true,"editable":true},"userInformation":{"title":"Infos","unique":true,"home":true,"editable":true},"userInformations":{"unique":true,"home":true,"editable":true},"blogs":{"title":"Blog","unique":true,"standalone":true,"editable":true},"blog":{"title":"Blog","unique":true,"editable":true},"contacts":{"title":"Contact","unique":true,"home":true,"editable":true},"contact":{"title":"Contact","unique":true,"editable":true},"badge":{"unique":true,"home":true,"undeletable":true,"editable":false},"title":{"title":"title.title","unique":true,"home":true,"undeletable":true,"editable":true},"externalContact":{"unique":true,"home":true,"undeletable":true,"editable":false},"userName":{"unique":true,"editable":false},"menu":{"unique":true,"editable":false},"download":{"unique":true,"editable":false},"share":{"unique":true,"editable":false},"languageSwitcher":{"unique":true,"editable":false},"htmlHead":{"unique":true,"editable":false},"debugger":{"unique":true,"editable":false},"page":{"unique":true,"editable":false},"contactMe":{"unique":true,"editable":true},"contactForm":{"unique":true,"editable":false},"proofreading":{"title":"Resume proofreading","unique":true,"editable":false},"topbar":{"unique":true,"editable":false},"synthesis":{"unique":true,"editable":false},"designLimitation":{"unique":true,"editable":false},"experienceSeniority":{"unique":true,"editable":false}},"editorConfig":{"cvEditorMenu":{"items":["content","design","download","publication"]},"design":{"anonymizer":"name_anonymizer.initials","displayAvatarWhileAnonymized":false,"movableWidgets":["skills","experiences","educations","portfolios","interests"],"pinnableWidgets":[],"widgetDefaultPositions":{"1":["experiences","portfolios"],"2":["skills","educations","interests"]},"nbColumns":2,"structure":"profile-left-top_col-60-40","themes":["Cv\/widgets\/skills\/level\/stars"]},"availableWidgets":["cv","avatar","experiences","educations","portfolios","skills","interests","tags","links","professionalPosition","presentation","userInformation","blogs","blog","contacts","badge","title","userName","menu","download","share","languageSwitcher","htmlHead","debugger","page","contactMe","contactForm","proofreading","topbar","metadesc"],"importProviders":[],"fontSizes":{"-2":"Small","-1":"Compact","0":"Comfortable","1":"Large"},"advices":[],"incentive":true},"user":{"isPremium":false,"confirmed":true,"offer":{"nbPortfolios":1,"accessToLimitedDesigns":false,"haveCustomColors":false,"canUploadCv":false,"hasMessageEventsAccess":false},"id":1839997,"login":"schulte.roman@live.de","objective":"changeJob","firstname":"Roman","lastname":"Schulte-Sasse"},"cvUrl":"https:\/\/www.doyoubuzz.com\/roman-schulte-sasse"};        initialState.incentive = {
+            conference: {"title":"Conf\u00e9rence en ligne gratuite","subtitle":"Les 4 secrets des CV qui d\u00e9crochent des entretiens \u00e0 tous les coups\n(ou presque)","date":{"date":"2019-05-21 00:00:00.000000","timezone_type":3,"timezone":"Europe\/Berlin"},"time":"De 14h30 \u00e0 17h","description":"\u00c0 la suite de la conf\u00e9rence,<br\/>Ludo et Uriel r\u00e9pondront en direct \u00e0 toutes vos questions sur la recherche d'emploi."},
+            improvements : {"title":"Faire un CV irr\u00e9sistible","subtitle":"\"Je constate qu\u2019en moyenne un excellent CV d\u00e9croche 6 ou 7 entretiens pour 10 candidatures quand un CV classique n\u2019en d\u00e9croche qu\u2019un seul (voire m\u00eame 0). Mon conseil : apprenez \u00e0 construire un CV irr\u00e9sistible en vous inscrivant \u00e0 notre conf\u00e9rence gratuite\"<br\/>\u2014 Ludo, coach emploi et co-fondateur de DoYouBuzz.","items":[{"title":"Comment d\u00e9crocher un entretien \u00e0 tous les coups ?","subtitle":"Une conf\u00e9rence en ligne gratuite pour apprendre \u00e0 construire un CV irr\u00e9sistible. Etudes de cas, conseils et exemples avec nos 2 coachs Uriel et Ludo.","link":"https:\/\/conference.doyoubuzz.com\/conference-recherche-emploi?affiliate_id=1412461&aff_sub=cv-irresistible&aff_sub2=&nopopup=false&noautoplay=false&cookiepreview=falsehttps:\/\/","buttonText":"En savoir plus","icon":"https:\/\/doyoubuzz.cdn.prismic.io\/doyoubuzz\/fb45b7ac257b681b81c3d25adfb0062708ba7549_conference.png"}]}
+        };
+    </script>
+                    <script src="/bundles/dyb/assets/js/build/libs/requirejs.min.js"></script>
+                <script>
+                var culture = "en_US";
+                                    var locale = "us";
+                                </script>
+                <script>
+                    require(["jquery", "layout/init" ], function ($, compile) {
+                        $(function () {
+                            compile($(document));
+                        });
+                    });
+
+                        require(["angular","layout\/logged","cv\/edit\/application"], function (angular) {
+        var modules = Array.prototype.slice.call(arguments, 1);
+
+        var appModule = angular.module("dybApp", []);
+                        appModule.value("locale", "us");
+                        appModule.value("cvId", "1905824");
+                    appModule.value("cvDatas", initialState);
+
+        appModule.value("user", {"isPremium":false,"confirmed":true,"offer":{"id":100,"nbPortfolios":1,"accessToLimitedDesigns":false,"haveCustomColors":false,"canUploadCv":false,"hasMessageEventsAccess":false},"url":"https:\/\/www.doyoubuzz.com\/roman-schulte-sasse\/","apps":[],"id":1839997,"db":"dyb","login":"schulte.roman@live.de","registeredAt":"2019-05-25T16:26:20+0200","objective":"changeJob","employmentPreferences":{"id":820806,"businessTrip":1,"disabled":false,"personalVehicle":false,"grossSalaryMin":1,"grossSalaryMax":11,"createdAt":"2019-05-25T18:12:58+0200","positions":[],"occupations":[],"business":[{"id":804}],"mobilities":[{"perimeter":0,"country":{"isoCode":"DEU"}},{"perimeter":0,"country":{"isoCode":"FRA"}}],"contractTypes":[],"hoursNumber":[]},"firstname":"Roman","lastname":"Schulte-Sasse","metadatas":[]});
+        modules.push(appModule);
+
+        modules = modules.map(function (module) {
+            return module.name;
+        });
+
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, modules);
+        });
+    });                </script>
+            
+
+                            <link href="/bundles/dyb/assets/js/dyb/help.css" type="text/css", rel="stylesheet"></link>
+        <script>
+            var resourcesPath = "/bundles/dyb/assets/js";
+            require([resourcesPath + "/vendor.js"], function () {
+                require([resourcesPath + "/dyb/help.js"], function (app) {
+                    var shouldShowLiveChat = false;
+                    var user = {"isPremium":false,"confirmed":true,"offer":{"id":100,"nbPortfolios":1,"accessToLimitedDesigns":false,"haveCustomColors":false,"canUploadCv":false,"hasMessageEventsAccess":false},"url":"https:\/\/www.doyoubuzz.com\/roman-schulte-sasse\/","apps":[],"id":1839997,"db":"dyb","login":"schulte.roman@live.de","registeredAt":"2019-05-25T16:26:20+0200","objective":"changeJob","employmentPreferences":{"id":820806,"businessTrip":1,"disabled":false,"personalVehicle":false,"grossSalaryMin":1,"grossSalaryMax":11,"createdAt":"2019-05-25T18:12:58+0200","positions":[],"occupations":[],"business":[{"id":804}],"mobilities":[{"perimeter":0,"country":{"isoCode":"DEU"}},{"perimeter":0,"country":{"isoCode":"FRA"}}],"contractTypes":[],"hoursNumber":[]},"firstname":"Roman","lastname":"Schulte-Sasse","metadatas":[]};
+                    app.launch("#dyb-help", shouldShowLiveChat, user, culture);
+                });
+            })
+        </script>
+            
+    </head>
+    <body id="dyb-tracked">
+
+        		<div role="main" class="main" >
+                    <link href="/bundles/dyb/libs/outdatedbrowser/outdatedbrowser.min.css" type="text/css" rel="stylesheet"/>
+    <script src="/bundles/dyb/libs/outdatedbrowser/outdatedbrowser.min.js"></script>
+    <!-- ============= Outdated Browser ============= -->
+    <div id="outdated">
+        <h6>Your browser is outdated!</h6>
+        <p>To ensure you have the best experience and security possible, update your browser. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/fr">Update now</a></p>
+        <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+    </div>
+        <!-- plugin call -->
+        <script>
+        //event listener form DOM ready
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+
+        var supportsPromise = typeof Promise !== "undefined" && Object.prototype.toString.call(Promise.resolve()) === '[object Promise]';
+        // <= safari 9
+        var supportRegexpFlag = true;
+        try {
+            new RegExp(/test/, 'y');
+        } catch (error) {
+            supportRegexpFlag = false;
+        }
+
+        //call plugin function after DOM ready
+        addLoadEvent(function(){
+         if(!supportsPromise || !supportRegexpFlag) {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: true,
+                languagePath: ''
+            })
+        }
+        });
+    </script>
+    
+			            <div class="widget widget_topBar"      >
+                <script type="text/javascript">
+        trackingParam.dyb.trackedUrl = '/logged/cv/mine/main/edit/';
+trackingParam.dyb.memberType = 'member';
+trackingParam.dyb.professionalStatus = 'end_of_studies';
+trackingParam.dyb.locale = 'en_US';
+trackingParam.stats.blockStatsTracking = true;
+    </script>
+
+<link href="/bundles/dyb/assets/css/app/User/navbar.css?v=5.1.25" type="text/css" rel="stylesheet"/>
+
+    <nav id="navbar" class="unselectable">
+        <a class="navbar-item" id="dashboard" href="https://www.doyoubuzz.com/us/dashboard">
+            <i class="ion-ios-home"></i> Dashboard
+        </a>
+        <div id="contextual-menu">
+                <div id="current-resume" class="dropdown navbar-item">
+        <a data-toggle="dropdown" id="resume-title" class="dropdown-opener">
+            Data Scientist
+            <i class="icon-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu pull-left" id="resume-options-menu">
+            <li>
+                <div class="dropright">
+                    <a class="dropright-opener">
+                        Language : <span data-ng-bind="'common.language.' + resume.options.culture | i18n"></span>
+                        <i class="icon-angle-right"></i>
+                    </a>
+                    <ul class="dropright-menu" data-option-panel="resume" id="language-selector">
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="ca_ES"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Catalan</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="de_DE"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>German</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="el_GR"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Greek</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="en_GB"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>English (UK)</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="en_US"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>English (US)</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="es_ES"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Spanish</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="fr_FR"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>French</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="it_IT"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Italian</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="nl_NL"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Dutch</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="ru_RU"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Russian</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="sv_SE"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Swedish</span>
+                                </label>
+                            </li>
+                                                    <li data-ng-click="blockToggle($event)">
+                                <label>
+                                    <input
+                                        type="radio"
+                                        value="tr_TR"
+                                        data-ng-model="options.culture"
+                                        data-ng-change="update('culture', options.culture)">
+                                    <span>Turkish</span>
+                                </label>
+                            </li>
+                                            </ul>
+                </div>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="https://www.doyoubuzz.com/us/cv/add?source=1905824">Translate</a>
+            <li>
+                <a href="/us/cv/add?duplicate=1905824">Make a copy</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <div class="dropright">
+                    <a class="dropright-opener">
+                        All my resumes
+                        <i class="icon-angle-right"></i>
+                    </a>
+                    <ul class="dropright-menu" >
+                                                <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="/us/cv/add">Create a new resume</a>
+                        </li>
+                        <li>
+                            <a href="/us/cv/manage">Manage my resumes</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+        </div>
+                                            <div id="premium-account-wrapper" class="navbar-item" data-dyb-help-campaign-watcher>
+                                                
+<a  id="premium-account" class="popovered"
+    href="#modal/premium-offers?referer=navbar"
+            data-dyb-track-promo="navbar-premiumIncentive-improveMyResume"
+        data-dyb-track-promo-hover="true">
+    <span class="legend">
+        Fit my résumé on one page
+    </span><div id="navbar-premium-popover" class="popover bottom" data-ng-show="!hasActiveCampaign">
+        <div class="arrow"></div>
+        <div class="popover-content">
+                            <h3><strong>Do you need a professional and structured résumé which fits on on page?</strong></h3>
+                <p>With the Premium Design offer you can easily create a professional and structured résumé.<br><br>- No DoYouBuzz logos<br>- Access to 25 layout designs<br>- Change of font sizes }}</p>
+                <br>
+                        <span class="flat_bt">I&#039;m interested</span>
+        </div>
+    </div></a>
+    
+                                    </div>
+                            <a  class="navbar-item" id="mailbox" href="/us/mailbox">
+            <i class="ion-ios-email"></i> Messaging service
+            
+<span
+    class="inbox-notify"
+    data-mailbox-notif="false"
+    data-ng-bind="nbNotifs"
+    data-ng-cloak
+    data-ng-show="nbNotifs > 0 || $loading"
+    data-ng-class="{ loading: $loading }"></span>
+        </a>
+        <div class="dropdown navbar-item">
+            <a data-toggle="dropdown" class="dropdown-opener">
+                Account
+                <i class="icon-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li>
+                    <a id="premium-account-menu" href="/us/user/premium/subscription">Premium Subscription</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="/us/user/password">Manage my account</a>
+                </li>
+                <li>
+                    <a href="/us/user/account">Personal info</a>
+                </li>
+                <li>
+                    <a href="/us/user/employment">My professional desires</i></a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="/us/user/domain/manage">Domain name</a>
+                </li>
+                <li>
+                    <a href="/us/user/domain/email">Professional email address</a>
+                </li>
+                <li>
+                    <a href="/us/signature">Email signature</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="/us/user/email-notifications">Notifications</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="/us/user/social-networks-connect">Connected apps</a>
+                </li>
+                <li>
+                    <a href="/us/user/developer">Developer account</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="https://www.doyoubuzz.com/us/logout"><i class="ion-log-out"></i> Sign out</a>
+                </li>
+                            </ul>
+        </div>
+    </nav>
+    
+
+    </div>
+
+
+            <div
+            data-dyb-notify-bar=""
+            data-ng-cloak
+            data-dyb-help-campaign-watcher
+            data-ng-show="!hasActiveCampaign && !hasNoWidgets()"
+        >
+        </div>
+                    
+        <div id="resume-section" data-resume-container="">
+                            <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/export')"
+        data-ng-cloak
+        id="export"
+        data-dyb-layout-compile
+        data-option-panel="resume"        >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                    <div >Send  to jobboards</div>
+                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-export"}'>
+            <h2 id="export-title">Post your resume on our partners websites in 1 click and it will be visible to thousands of recruiters.</h2>
+    
+                        <ul id="exporter-list">
+                    </ul>
+            
+    <h2 id="how-it-works">How does it work?</h2>
+    <div id="export-info">
+        <div class="export-step">An account is created on the partner&#039;s website.</div>
+        <i class="ion-chevron-right"></i>
+        <div class="export-step">An email is sent from the partner.</div>
+        <i class="ion-chevron-right"></i>
+        <div class="export-step">Recruiters will see your resume on different resume databases and will be able to contact you.</div>
+    </div>
+    </div>
+    </div>
+    
+                    <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/design')"
+        data-ng-cloak
+        id="designs"
+        data-dyb-layout-compile
+        data-ng-controller="designsController"        >
+            <div class="modal-title premiumDesignIncentive">
+                    <div class="premiumDesignIncentive__msg">
+                Are you interested in one of these designs?<br>With the Premium Design account, you have access to <strong>all</strong> the DoYouBuzz designs for 1 year.
+            </div>
+            <div class="premiumDesignIncentive__action">
+                <a
+                    href="/fr/order/sku/design?referer=designGallery"}
+                    target="_self"
+                    class="flat_bt"
+                    id="buy-premium-design-button"
+                    >
+                    Switch to the Design offer
+                </a>
+            </div>
+                <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+    </div>
+    <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-designs"}'>
+            <div class="dyb-loader" data-ng-hide="designs.length > 0"></div>
+    <div class="theme-picker"
+        data-ng-if="designs.length > 0"
+        data-ng-init="userDesign = design"
+        >
+        <div>
+            <div class="design-category subnav">
+                <a
+                    data-ng-class="{'active': tag === activeTag }"
+                    data-ng-repeat="tag in tags"
+                    data-ng-click="setFilter(tag)"
+                    data-ng-bind="('design.category.' + tag) | i18n"
+                >
+                </a>
+            </div>
+            <div class="designs-container">
+                <div
+                    class="design"
+                    data-ng-class="{ current : isUserDesign(design, userDesign), locked: !canApplyDesign(design) }"
+                    data-ng-repeat="design in designs"
+                    data-ng-init="swatch = { show: false }"
+                    >
+                    <div class="design-thumbnail">
+                        <div class="premium-label" data-ng-if="!canApplyDesign(design)"><span>Premium</span></div>
+                        <img data-ng-src="{{getThumbnailUrl(design, &quot;us&quot;, &quot;print&quot;) }}" alt="{{ design.name }}">
+                    </div>
+                    <div class="design-infos">
+                        <div class="design-name" data-ng-bind="design.name"></div>
+                        <div class="design-attributes">
+                            <span class="attributes-title positive">Assets</span>
+                            <div class="attribute positive" data-ng-repeat="argument in design.args.advantages"><span data-ng-bind="argument"></span></div>
+                            <hr>
+                            <span class="attributes-title negative">Attention</span>
+                            <div class="attribute negative" data-ng-repeat="argument in design.args.drawbacks"><span data-ng-bind="argument"></span></div>
+                        </div>
+                        <div class="design-actions">
+                            <div class="colors" data-ng-show="design.colors.length > 1">
+                                <a
+                                    class="color"
+                                    data-ng-class="{ selected: getSelectedColor(design, userDesign, designColor).toUpperCase() === color.toUpperCase() }"
+                                    data-ng-style="{ background: color }"
+                                    data-ng-repeat="color in getDesignMainColors(design)"
+                                    data-ng-click="selectColor(design, color)">
+                                    <span class="dot"></span>
+                                </a>
+                                <a
+                                    class="color swatch-opener"
+                                    data-ng-class="{ selected: !isMainColor(design, getSelectedColor(design, userDesign, designColor)) }"
+                                    data-ng-click="swatch.show = true">
+                                    <span class="dot"></span>
+                                </a>
+                            </div>
+                            <button
+                                class="flat_bt small apply"
+                                data-ng-show="!isUserDesign(design, userDesign) || getSelectedColor(design, userDesign, designColor) !== designColor"
+                                data-ng-click="applyDesign('web', design, getSelectedColor(design, userDesign, designColor));">
+                                <span data-ng-switch="canApplyDesign(design)">
+                                    <span data-ng-switch-when="false">Try on my résumé</span>
+                                    <span data-ng-switch-when="true">Apply</span>
+                                </span>
+                            </button>
+                            <div class="current-theme" data-ng-show="isUserDesign(design, userDesign) && getSelectedColor(design, userDesign, designColor) == designColor">
+                                <i class="ion-checkmark"></i> Current design
+                            </div>
+                        </div>
+                    </div>
+                    <div data-ng-if="swatch.show">
+                        <div data-ng-include="'color-picker.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="color-picker.html">
+        <div id="swatch-wrapper" data-ng-show="swatch.show">
+            <div id="swatch-overlay" data-ng-click="swatch.show=false"></div>
+            <div id="swatch">
+                <div class="modal-title" id="swatch-title">Pick a color<a class="modal-closer" id="swatch-closer" data-ng-click="swatch.show=false"><i class="ion-android-close"></i></a></div>
+                <div id="primary-swatch" class="clearfix">
+                    <a
+                        class="color"
+                        data-ng-class="{ selected: getSelectedColor(design, userDesign, designColor).toUpperCase() === color.toUpperCase() }"
+                        data-ng-style="{ background: color }"
+                        data-ng-repeat="color in design.colors"
+                        data-ng-click="selectColor(design, color);"
+                    ><span class="dot"></span></a>
+                </div>
+                <div
+                    id="full-swatch"
+                    class="clearfix"
+                    data-mini-colors="getSelectedColor(design, userDesign, designColor)"
+                    data-on-select-color="selectColor(design, color)"
+                    data-on-validate-color="swatch.show = false; applyDesign('web', design, getSelectedColor(design, userDesign, designColor))"
+                >
+                </div>
+            </div>
+        </div>
+    </script>
+    </div>
+    </div>
+    
+            <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/proofreading-request')"
+        data-ng-cloak
+        id="proofreading-request"
+        data-dyb-layout-compile
+                >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                Ask my contacts to proofread my resume                            </div>
+                <a href="#modal/quality-control" class="modal-closer back">Back <i class="ion-reply"></i></a>
+                    <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+            
+        </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-proofreading-request"}'>
+            <div id="proofreading-request-form" data-dyb-proofreading-request="/fr/mailbox/compose">
+        
+        <div id="compose">
+        <form data-ajax-form='{{ getSendUrl(conversation) }}' data-on-form-submitted='onMessageSent()' data-dyb-layout-compile>
+            <div id="compose_message"><div class="field
+         required
+        
+        "
+        id="compose_message_to_field"
+    ><label for="compose_message_to" class="required">Recipient</label><input type="text" id="compose_message_to" name="compose_message[to]" required="required" /></div><div class="field
+         required
+        
+        "
+        id="compose_message_title_field"
+    ><label for="compose_message_title" class="required">Subject</label><input type="text" id="compose_message_title" name="compose_message[title]" required="required" value="Do you need your resume to be proofread?" /></div><div class="field
+         required
+        
+        "
+        id="compose_message_message_field"
+    ><label for="compose_message_message" class="required">Message</label><div id="rte-toolbar" class="toolbar ql-toolbar ql-snow"><div class="ql-format-group"><span class="ql-format-button ql-bold"></span><span class="ql-format-button ql-italic"></span><span class="ql-format-button ql-strike"></span><span class="ql-format-button ql-underline"></span></div><div class="ql-format-group"><span class="ql-format-button ql-list"></span><span class="ql-format-button ql-bullet"></span></div><div class="ql-format-group"><span class="ql-format-button ql-link"></span><span class="ql-format-button ql-image"></span></div></div><textarea style="display:none" class="hidden-textarea" id="compose_message_message" name="compose_message[message]" required="required"></textarea><div data-rte>Hey,<br>I created my resume on DoYouBuzz but I would like you to read it before to send it to recruiters. Can you spare me a few minutes and give me your opinion?<br>You can comment directly on the resume: <a href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/proofreading/3ae63421849aabdb0809e5ab1fe435f5">www.doyoubuzz.com/roman-schulte-sasse/cv/proofreading/3ae63421849aabdb0809e5ab1fe435f5</a><br><br> Thanks for your input!<br>--<br>Roman Schulte-Sasse - <a href="https://www.doyoubuzz.com/roman-schulte-sasse">www.doyoubuzz.com/roman-schulte-sasse</a></div></div><div class="field
+         required
+        
+        "
+        id="compose_message_recaptcha_field"
+    ><label class="required">Recaptcha</label><div id="compose_message_recaptcha"     class="g-recaptcha" id="compose_message_recaptcha"></div><script>
+            // use requirejs to ensure lib is loaded only once in the page
+            function init() {
+                require(["jquery"], function ($) {
+                    function initrecaptcha() {
+                        var $container = $("#compose_message_recaptcha");
+                        if ($container.is(":visible")) {
+                            try {
+                                grecaptcha.render($container[0], {
+                                    sitekey: "6LdRNigTAAAAAPFGK8pC5Oz4E3LMlixYn0Lb_iuX"
+                                });
+                            } catch (err) {
+                                console.log("reCAPTCHA has already been rendered in this element")
+                            }
+                            $container.find("iframe").attr("id", "frame-compose_message_recaptcha");
+                            return;
+                        }
+                        setTimeout(initrecaptcha, 500);
+                    }
+                    initrecaptcha();
+                });
+            }
+            require(["//www.google.com/recaptcha/api.js?onload=init&render=explicit&hl=en"], function () {
+                if (typeof grecaptcha !== 'undefined'){
+                    init();
+                }
+             });
+        </script></div></div>
+            <button
+                class="flat_bt ladda-button"
+                type="submit"
+                data-ladda="submitting"
+                data-style="zoom-in"
+                data-size="s"
+                data-color="blue"
+            >Send</button>
+        </form>
+    </div>
+    </div>
+            <div id="proofreadingrequest-otherways">
+            <span id="proofreading-request-link-title">or share this link:</span>
+            <div id="proofreading-request-link"
+                data-copy-input="www.doyoubuzz.com/roman-schulte-sasse/cv/proofreading/3ae63421849aabdb0809e5ab1fe435f5"
+                data-copy-input-visible-content="www.doyoubuzz.com/roman-schulte-sasse/cv/proofreading/3..."
+                data-copy-input-button-text="Copy"
+                data-copy-input-button-success-text="Copied!"
+                >
+            </div>
+            <div id="social-request">
+                <a class="social-request" target="_blank" href="http://twitter.com/home?status=I+created+my+resume+on+DoYouBuzz+and+I+would+like+to+have+your+opinion%3A+www.doyoubuzz.com%2Froman-schulte-sasse%2Fcv%2Fproofreading%2F3ae63421849aabdb0809e5ab1fe435f5"><i class="ion-social-twitter"></i>
+                    Share on Twitter
+                </a>
+                <a class="social-request" target="_blank" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=www.doyoubuzz.com%2Froman-schulte-sasse%2Fcv%2Fproofreading%2F3ae63421849aabdb0809e5ab1fe435f5&amp;p[images][0]=&amp;p[title]=Do+you+need+your+resume+to+be+proofread%3F&amp;p[summary]=Hey%2C%7Bnewline%7DI+created+my+resume+on+DoYouBuzz+but+I+would+like+you+to+read+it+before+to+send+it+to+recruiters.+Can+you+spare+me+a+few+minutes+and+give+me+your+opinion%3F%7Bnewline%7DYou+can+comment+directly+on+the+resume%3A+%7Blink%7D%7Bnewline%7D%7Bnewline%7D+Thanks+for+your+input%21"><i class="ion-social-facebook"></i>
+                    Share on Facebook
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+        <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/description')"
+        data-ng-cloak
+        id="metadesc"
+        data-dyb-layout-compile
+        data-option-panel="resume"        >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                Short description                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-metadesc"}'>
+            <form data-ng-submit="update('description', options.description).then(goHome);">
+        <div class="infos">
+            The short description will be seen if you share your resume on search engines and social networks. Use one or two short sentences to describe you and your skills (200 characters max)
+        </div>
+        <textarea data-ng-model="options.description"></textarea>
+        <div id="max-char-info">
+            <span data-ng-class="{invalid: options.description.length > 200}">
+                <i data-ng-show="options.description.length > 200" class="icon-warning-sign"></i>
+                <span data-ng-bind="options.description.length"></span>
+            </span>/200 characters
+        </div>
+        <button
+            data-ng-disabled="options.description.length > 200"
+            type="submit"
+            class="ladda-button"
+            data-ladda
+            data-size="s"
+            data-color="blue"
+            data-style="zoom-in">
+            Save
+        </button>
+    </form>
+    </div>
+    </div>
+
+                    <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/premium-offers')"
+        data-ng-cloak
+        id="premium-offers"
+        data-dyb-layout-compile
+                >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-premium-offers"}'>
+            <div data-ng-hide="loaded" class="dyb-loader"></div>
+        <div data-referer-parser data-ng-include="'/fr/premium-offers?standalone=1&amp;referer=' + referer" style="margin: auto" onload="loaded=true"></div>
+    </div>
+    </div>
+        <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/premium-offers-reconnect')"
+        data-ng-cloak
+        id="premium-offers"
+        data-dyb-layout-compile
+                >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-premium-offers"}'>
+            <div data-ng-hide="loaded" class="dyb-loader"></div>
+    <div data-ng-include="'/fr/premium-offers?standalone=1&amp;variation=reconnect'" style="margin: auto" onload="loaded=true"></div>
+    </div>
+    </div>
+        <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/premium-offers-completion')"
+        data-ng-cloak
+        id="premium-offers"
+        data-dyb-layout-compile
+                >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-premium-offers"}'>
+            <div data-ng-hide="loaded" class="dyb-loader"></div>
+    <div data-ng-include="'/fr/premium-offers?standalone=1&amp;variation=completion'" style="margin: auto" onload="loaded=true"></div>
+    </div>
+    </div>
+                    <span data-completion-incentive-redirection='{ "url": "#modal/premium-offers-completion", "completionTrigger": 50 }'></span>
+            
+        <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/import')"
+        data-ng-cloak
+        id="import"
+        data-dyb-layout-compile
+                >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                Importing your data                             </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"  data-dyb-track-view='{"action":"open-drawer","label":"drawer-import"}'>
+            <div data-ng-show="isOnUrl('#modal/import/doyoubuzz')">
+        <img class="provider-logo" src="/bundles/dyb/images/Common/doyoubuzz-white.png" alt="doyoubuzz">
+        <h2>The data will be added on your resume</h2>
+        <a href="/cv/1905824/import/doyoubuzz" class="flat_bt">Confirm</a>
+    </div>
+    <div data-ng-show="isOnUrl('#modal/import/doc-pdf')">
+        <div class="dyb-loader" data-ng-if='!loaded'></div>
+        <div data-ng-include="'/cv/1905824/import/doc-pdf'" onload="loaded=true"></div>
+    </div>
+    </div>
+    </div>
+
+            <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/preview-pdf')"
+        data-ng-cloak
+        id="preview-pdf"
+        data-dyb-layout-compile
+            data-ng-cloak
+    data-download-settings="resume.id"
+        >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"     data-pdf-preview=""
+    data-scrolling-container
+    data-on-scroll-end="scrollOffset = offset"
+ data-dyb-track-view='{"action":"open-drawer","label":"drawer-preview-pdf"}'>
+            <div class="dyb-loader" data-ng-show="!downloadSettings.settings"></div>
+    <div data-ng-show="downloadSettings.settings" id="pdf-preview-container" data-ng-include="downloadSettings.settings.hasOwnFile ? 'pdf-preview/customfile' : 'pdf-preview/preview'">
+    </div>
+    <script type="text/ng-template" id="pdf-preview/customfile">
+        <div id="custom-file-info">
+    <h2>You chose to use your own file</h2>
+    <h3>You visitors can access it from the &quot;download&quot; button on your resume&#039;s web version</h3>
+    <br><br>
+    <a href="/roman-schulte-sasse/cv/download/custom" target="_blank" class="flat_bt">Download this file</a>
+    <a href="" data-ng-click="downloadSettings.removeUploadedFile(resume.id)" class="flat_bt">Delete and use DoYouBuzz version</a>
+</div>
+    </script>
+    <script type="text/ng-template" id="pdf-preview/preview">
+        <div id="pdf-thumbnails" data-ng-class="{loaded: downloadSettings.settings}">
+    <a class="page-thumbnail" data-ng-class="{current: page === currentPage}" data-ng-repeat="page in pages" data-ng-click="setCurrentPage(page)">
+        page<br>
+        <span data-ng-bind="page"></span>
+        <span>/</span>
+        <span data-ng-bind="pages.length"></span>
+    </a>
+</div>
+<div class="dyb-loader" data-ng-show="iframeLoading"></div>
+<div class="notification-container" data-pdf-warnings="resume">
+    <div class="notification info" data-ng-controller="designsController" data-ng-show="!canApplyDesign(design)">
+        <div data-ng-if="!canApplyDesign(design)"  data-ng-init="loadDesignProduct(design)">
+        You are currently trying out the <strong>{{design.name}}</strong> design. To unlock and apply with this design, purchase our "Premium Design" offer (Satisfaction or your money back). <a class='flat_bt small' target='_self' data-ng-href=' /fr/order/sku/design'>Purchase the Premium Design offer</a> <a href='#modal/design' class='flat_bt small cancel'>Try out another one</a>
+        </div>
+    </div>
+
+    <div class="notification warning" data-ng-show="warnings.unpublished">
+        Your resume isn&#039;t activated. Before you send it in pdf format, remember to activate or delete the link to your online resume..
+        <a class="link" href="http://aide.doyoubuzz.com/help-center/pdf-and-word-resume/online-resume-address-on-your-pdf" target="_blank">Learn more</a>
+    </div>
+    <div class="notification info" data-ng-show="warnings.anonymized">
+        Your phone number will not be shown to visitors of your online resume.
+        <a class="link" href="http://aide.doyoubuzz.com/creez-votre-cv-en-quelques-minutes-avec-doyoubuzz/quelques-petites-choses-a-savoir-a-propos-de-la-creation-de-votre-cv/comment-gerer-la-confidentialite-de-mes-coordonnees-sur-mon-cv" target="_blank">Learn more</a>
+    </div>
+</div>
+<div id="iframe-preview-wrapper" data-ng-class="{ 'flat-dom': paginationAlgoVersion === 1}">
+    <div id="scaler">
+            <iframe
+                frameborder="0"
+                scrolling="no"
+                data-iframe-fit-to-content
+                data-iframe-dynamic-src="getPreviewUrl('/roman-schulte-sasse/cv/preview/print', downloadSettings.serializeSettings(settingsForm))"
+                data-iframe-onloadstart="iframeLoading = true"
+                data-iframe-onloadend="iframeLoading = false"
+                data-iframe-onpaginationdone="computePages(pageInfos)"
+                data-iframe-css-injector="/bundles/dyb/assets/css/app/Cv/Edit/preview-pdf-cv-overload.css"></iframe>
+    </div>
+</div>
+<div id="pdf-panel-config" data-ng-class="{loaded: downloadSettings.settings}">
+    <form
+        class="clearfix dyb_form"
+        name="settingsForm"
+        id="settings-form"
+        data-ng-submit="downloadSettings.saveSettings(resume.id, downloadSettings.settings, settingsForm)"
+    >
+                    <div    class="size-selector limited"
+                                            data-tooltip data-placement="top"
+                        title="{startTag}Upgrade to Premium{endTag} to enjoy this feature!"
+                    >
+                                            <div>
+                            <div class="field
+        
+        
+        "
+        id="cv_download_options_inaccessibleFields_fontSize_field"
+    ><label for="cv_download_options_inaccessibleFields_fontSize">Font size</label><div                     id="cv_download_options_inaccessibleFields_fontSize" name="cv_download_options[inaccessibleFields][fontSize]" disabled="disabled"    data-dyb-simple-select="[{&quot;data&quot;:-2,&quot;value&quot;:&quot;-2&quot;,&quot;label&quot;:&quot;Small&quot;},{&quot;data&quot;:-1,&quot;value&quot;:&quot;-1&quot;,&quot;label&quot;:&quot;Compact&quot;},{&quot;data&quot;:0,&quot;value&quot;:&quot;0&quot;,&quot;label&quot;:&quot;Comfortable&quot;},{&quot;data&quot;:1,&quot;value&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Large&quot;}]" data-dyb-select-id="cv_download_options_inaccessibleFields_fontSize" data-empty="" data-ng-show="source.length &gt; 0" class="fontSize-picker" data-ng-model="editedWidget.fontSize" data-ng-class="{loading: ($loading || $fontSize_loading) }" data-toggle-show="editedWidget.fontSize"
+></div></div>
+                        </div>
+                                </div>
+                <div class="dropup clearfix" id="content-selector">
+            <a data-toggle="dropdown" id="content-selector-opener">
+                Choices of contents to display
+                <i class="icon-angle-up"></i>
+            </a>
+            <div class="dropdown-menu" data-ng-click="$event.stopPropagation()">
+                <div id="cv_download_options_accessibleFields"><div class="field checkbox " id="cv_download_options_accessibleFields_location_field"><input type="checkbox"                     id="cv_download_options_accessibleFields_location" name="cv_download_options[accessibleFields][location]"    data-ng-model="editedWidget.location" data-ng-class="{loading: ($loading || $location_loading) }" data-toggle-show="editedWidget.location"
+ value="1" checked="checked" /><label for="cv_download_options_accessibleFields_location">Country</label></div><div class="field checkbox " id="cv_download_options_accessibleFields_address_field"><input type="checkbox"                     id="cv_download_options_accessibleFields_address" name="cv_download_options[accessibleFields][address]"    data-ng-model="editedWidget.address" data-ng-class="{loading: ($loading || $address_loading) }" data-toggle-show="editedWidget.address"
+ value="1" checked="checked" /><label for="cv_download_options_accessibleFields_address">Postal Address <div class="subinfo">To modify this, edit your <a href="/fr/user/account">personal information</a></div></label></div></div>
+                                    <div id="limited-pdf-options" class="limited">
+                        <div class="limited-fields">
+                            <div id="cv_download_options_inaccessibleFields"><div class="field checkbox " id="cv_download_options_inaccessibleFields_age_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_age" name="cv_download_options[inaccessibleFields][age]" disabled="disabled"    data-ng-model="editedWidget.age" data-ng-class="{loading: ($loading || $age_loading) }" data-toggle-show="editedWidget.age"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_age">Birthdate</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_url_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_url" name="cv_download_options[inaccessibleFields][url]" disabled="disabled"    data-ng-model="editedWidget.url" data-ng-class="{loading: ($loading || $url_loading) }" data-toggle-show="editedWidget.url"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_url">URL of my resume</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_experiences_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_experiences" name="cv_download_options[inaccessibleFields][experiences]" disabled="disabled"    data-ng-model="editedWidget.experiences" data-ng-class="{loading: ($loading || $experiences_loading) }" data-toggle-show="editedWidget.experiences"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_experiences">Experience</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_skills_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_skills" name="cv_download_options[inaccessibleFields][skills]" disabled="disabled"    data-ng-model="editedWidget.skills" data-ng-class="{loading: ($loading || $skills_loading) }" data-toggle-show="editedWidget.skills"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_skills">Skills</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_skillLevel_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_skillLevel" name="cv_download_options[inaccessibleFields][skillLevel]" disabled="disabled"    data-ng-model="editedWidget.skillLevel" data-ng-class="{loading: ($loading || $skillLevel_loading) }" data-toggle-show="editedWidget.skillLevel"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_skillLevel">Level</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_interests_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_interests" name="cv_download_options[inaccessibleFields][interests]" disabled="disabled"    data-ng-model="editedWidget.interests" data-ng-class="{loading: ($loading || $interests_loading) }" data-toggle-show="editedWidget.interests"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_interests">Interests</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_picture_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_picture" name="cv_download_options[inaccessibleFields][picture]" disabled="disabled"    data-ng-model="editedWidget.picture" data-ng-class="{loading: ($loading || $picture_loading) }" data-toggle-show="editedWidget.picture"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_picture">Profile picture</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_drivingLicence_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_drivingLicence" name="cv_download_options[inaccessibleFields][drivingLicence]" disabled="disabled"    data-ng-model="editedWidget.drivingLicence" data-ng-class="{loading: ($loading || $drivingLicence_loading) }" data-toggle-show="editedWidget.drivingLicence"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_drivingLicence">Driver's License</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_educations_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_educations" name="cv_download_options[inaccessibleFields][educations]" disabled="disabled"    data-ng-model="editedWidget.educations" data-ng-class="{loading: ($loading || $educations_loading) }" data-toggle-show="editedWidget.educations"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_educations">Education</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_presentation_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_presentation" name="cv_download_options[inaccessibleFields][presentation]" disabled="disabled"    data-ng-model="editedWidget.presentation" data-ng-class="{loading: ($loading || $presentation_loading) }" data-toggle-show="editedWidget.presentation"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_presentation">About Me </label></div></div>
+                            <div class="field">
+                                <hr>
+                                <label>You can also upload your own file (Your visitors can download it from your resume&#039;s web version)</label>
+                            </div>
+                        </div>
+                        <div id="premium-limitation-message">
+                            <p>
+                                This feature is for Premium members only
+                                <br>
+                                <a data-dyb-track-promo="limitation-advancedConfigPdf-switchToPremiumAccount" href="#modal/premium-offers?referer=pdf-preview">Switch to Premium Account</a>
+                            </p>
+                        </div>
+                    </div>
+                                            </div>
+        </div>
+        <a id="changedesign-shortcut" data-redirect-on-event="design-applied" href="#modal/design">Change design</a>
+        <div id="pdf-actions">
+            <div id="save-config" data-ng-class="{active: !settingsForm.$pristine}">
+                <button
+                    id="cancel-pdf-config"
+                    type="button"
+                    class="flat_bt cancel"
+                    data-ng-click="downloadSettings.resetForm(settingsForm)"
+                >
+                    Cancel changes
+                </button>
+                <button
+                    id="submit-pdf-config"
+                    type="submit"
+                    class="flat_bt ladda-button"
+                    data-ladda="downloadSettings.saving"
+                    data-size="s"
+                    data-color="blue"
+                    data-style="zoom-in"
+                >
+                    Save
+                </button>
+            </div>
+            <a
+                id="download-pdf-file"
+                class="flat_bt"
+                data-ng-class="{active: settingsForm.$pristine}"
+                                    href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/download"
+                    target="_blank"
+                                >
+                <i class="ion-ios-download"></i> Download PDF file
+            </a>
+        </div>
+    </form>
+</div>
+    </script>
+    </div>
+    </div>
+
+        <div    class="modal angular-anim slide-in-out-left-right"
+        data-ng-if="isOnUrl('#modal/beta-preview-pdf')"
+        data-ng-cloak
+        id="preview-pdf"
+        data-dyb-layout-compile
+            data-ng-cloak
+    data-download-settings="resume.id"
+        >
+                <div class="modal-title">
+            <div class="modal-title-content">
+                                            </div>
+                            <a href="#home" class="modal-closer">Close <i class="ion-android-close"></i></a>
+                    </div>
+        <div class="modal-content"     data-pdf-preview=""
+    data-scrolling-container
+    data-on-scroll-end="scrollOffset = offset"
+ data-dyb-track-view='{"action":"open-drawer","label":"drawer-preview-pdf"}'>
+            <div class="dyb-loader" data-ng-show="!downloadSettings.settings"></div>
+    <div data-ng-show="downloadSettings.settings" id="pdf-preview-container" data-ng-include="downloadSettings.settings.hasOwnFile ? 'pdf-preview/customfile' : 'pdf-preview/previewbeta'">
+    </div>
+    <script type="text/ng-template" id="pdf-preview/customfile">
+        <div id="custom-file-info">
+    <h2>You chose to use your own file</h2>
+    <h3>You visitors can access it from the &quot;download&quot; button on your resume&#039;s web version</h3>
+    <br><br>
+    <a href="/roman-schulte-sasse/cv/download/custom" target="_blank" class="flat_bt">Download this file</a>
+    <a href="" data-ng-click="downloadSettings.removeUploadedFile(resume.id)" class="flat_bt">Delete and use DoYouBuzz version</a>
+</div>
+    </script>
+    <script type="text/ng-template" id="pdf-preview/previewbeta">
+        <div id="pdf-thumbnails" data-ng-class="{loaded: downloadSettings.settings}">
+    <a class="page-thumbnail" data-ng-class="{current: page === currentPage}" data-ng-repeat="page in pages" data-ng-click="setCurrentPage(page)">
+        page<br>
+        <span data-ng-bind="page"></span>
+        <span>/</span>
+        <span data-ng-bind="pages.length"></span>
+    </a>
+</div>
+<div class="dyb-loader" data-ng-show="iframeLoading"></div>
+<div class="notification-container" data-pdf-warnings="resume">
+    <div class="notification info" data-ng-controller="designsController" data-ng-show="!canApplyDesign(design)">
+        <div data-ng-if="!canApplyDesign(design)"  data-ng-init="loadDesignProduct(design)">
+        You are currently trying out the <strong>{{design.name}}</strong> design. To unlock and apply with this design, purchase our "Premium Design" offer (Satisfaction or your money back). <a class='flat_bt small' target='_self' data-ng-href=' /fr/order/sku/design'>Purchase the Premium Design offer</a> <a href='#modal/design' class='flat_bt small cancel'>Try out another one</a>
+        </div>
+    </div>
+
+    <div class="notification warning" data-ng-show="warnings.unpublished">
+        Your resume isn&#039;t activated. Before you send it in pdf format, remember to activate or delete the link to your online resume..
+        <a class="link" href="http://aide.doyoubuzz.com/help-center/pdf-and-word-resume/online-resume-address-on-your-pdf" target="_blank">Learn more</a>
+    </div>
+    <div class="notification info" data-ng-show="warnings.anonymized">
+        Your phone number will not be shown to visitors of your online resume.
+        <a class="link" href="http://aide.doyoubuzz.com/creez-votre-cv-en-quelques-minutes-avec-doyoubuzz/quelques-petites-choses-a-savoir-a-propos-de-la-creation-de-votre-cv/comment-gerer-la-confidentialite-de-mes-coordonnees-sur-mon-cv" target="_blank">Learn more</a>
+    </div>
+</div>
+<div id="iframe-preview-wrapper" data-ng-class="{ 'flat-dom': paginationAlgoVersion === 1}">
+    <div id="scaler">
+            <iframe
+                frameborder="0"
+                scrolling="no"
+                data-iframe-fit-to-content
+                data-iframe-dynamic-src="getPreviewUrl('/roman-schulte-sasse/cv/preview/print', downloadSettings.serializeSettings(settingsForm))"
+                data-iframe-onloadstart="iframeLoading = true"
+                data-iframe-onloadend="iframeLoading = false"
+                data-iframe-onpaginationdone="computePages(pageInfos)"
+                data-iframe-css-injector="/bundles/dyb/assets/css/app/Cv/Edit/preview-pdf-cv-overload.css"></iframe>
+    </div>
+</div>
+<div id="pdf-panel-config" data-ng-class="{loaded: downloadSettings.settings}">
+    <form
+        class="clearfix dyb_form"
+        name="settingsForm"
+        id="settings-form"
+        data-ng-submit="downloadSettings.saveSettings(resume.id, downloadSettings.settings, settingsForm)"
+    >
+                        <div    class="size-selector limited"
+                                            data-tooltip data-placement="top"
+                        title="{startTag}Upgrade to Premium{endTag} to enjoy this feature!"
+                    >
+                                            <div>
+                            <div class="field
+        
+        
+        "
+        id="cv_download_options_inaccessibleFields_fontSize_field"
+    ><label for="cv_download_options_inaccessibleFields_fontSize">Font size</label><div                     id="cv_download_options_inaccessibleFields_fontSize" name="cv_download_options[inaccessibleFields][fontSize]" disabled="disabled"    data-dyb-simple-select="[{&quot;data&quot;:-2,&quot;value&quot;:&quot;-2&quot;,&quot;label&quot;:&quot;Small&quot;},{&quot;data&quot;:-1,&quot;value&quot;:&quot;-1&quot;,&quot;label&quot;:&quot;Compact&quot;},{&quot;data&quot;:0,&quot;value&quot;:&quot;0&quot;,&quot;label&quot;:&quot;Comfortable&quot;},{&quot;data&quot;:1,&quot;value&quot;:&quot;1&quot;,&quot;label&quot;:&quot;Large&quot;}]" data-dyb-select-id="cv_download_options_inaccessibleFields_fontSize" data-empty="" data-ng-show="source.length &gt; 0" class="fontSize-picker" data-ng-model="editedWidget.fontSize" data-ng-class="{loading: ($loading || $fontSize_loading) }" data-toggle-show="editedWidget.fontSize"
+></div></div>
+                        </div>
+                                </div>
+        
+    <div    class="size-selector limited"
+                            data-tooltip data-placement="top"
+                title="{startTag}Upgrade to Premium{endTag} to enjoy this feature!"
+            >
+                            <div>
+                    <div class="field
+        
+        
+        "
+        id="cv_download_options_inaccessibleFields_densitySize_field"
+    ><label for="cv_download_options_inaccessibleFields_densitySize">Margin size</label><div                     id="cv_download_options_inaccessibleFields_densitySize" name="cv_download_options[inaccessibleFields][densitySize]" disabled="disabled"    data-dyb-simple-select="[{&quot;data&quot;:70,&quot;value&quot;:&quot;70&quot;,&quot;label&quot;:&quot;70%&quot;},{&quot;data&quot;:75,&quot;value&quot;:&quot;75&quot;,&quot;label&quot;:&quot;75%&quot;},{&quot;data&quot;:80,&quot;value&quot;:&quot;80&quot;,&quot;label&quot;:&quot;80%&quot;},{&quot;data&quot;:85,&quot;value&quot;:&quot;85&quot;,&quot;label&quot;:&quot;85%&quot;},{&quot;data&quot;:90,&quot;value&quot;:&quot;90&quot;,&quot;label&quot;:&quot;90%&quot;},{&quot;data&quot;:95,&quot;value&quot;:&quot;95&quot;,&quot;label&quot;:&quot;95%&quot;},{&quot;data&quot;:100,&quot;value&quot;:&quot;100&quot;,&quot;label&quot;:&quot;100%&quot;},{&quot;data&quot;:105,&quot;value&quot;:&quot;105&quot;,&quot;label&quot;:&quot;105%&quot;},{&quot;data&quot;:110,&quot;value&quot;:&quot;110&quot;,&quot;label&quot;:&quot;110%&quot;}]" data-dyb-select-id="cv_download_options_inaccessibleFields_densitySize" data-empty="" data-ng-show="source.length &gt; 0" class="densitySize-picker" data-ng-model="editedWidget.densitySize" data-ng-class="{loading: ($loading || $densitySize_loading) }" data-toggle-show="editedWidget.densitySize"
+></div></div>
+                </div>
+              
+    </div>
+        <div class="dropup clearfix" id="content-selector">
+            <a data-toggle="dropdown" id="content-selector-opener">
+                Choices of contents to display
+                <i class="icon-angle-up"></i>
+            </a>
+            <div class="dropdown-menu" data-ng-click="$event.stopPropagation()">
+                <div id="cv_download_options_accessibleFields"><div class="field checkbox " id="cv_download_options_accessibleFields_location_field"><input type="checkbox"                     id="cv_download_options_accessibleFields_location" name="cv_download_options[accessibleFields][location]"    data-ng-model="editedWidget.location" data-ng-class="{loading: ($loading || $location_loading) }" data-toggle-show="editedWidget.location"
+ value="1" checked="checked" /><label for="cv_download_options_accessibleFields_location">Country</label></div><div class="field checkbox " id="cv_download_options_accessibleFields_address_field"><input type="checkbox"                     id="cv_download_options_accessibleFields_address" name="cv_download_options[accessibleFields][address]"    data-ng-model="editedWidget.address" data-ng-class="{loading: ($loading || $address_loading) }" data-toggle-show="editedWidget.address"
+ value="1" checked="checked" /><label for="cv_download_options_accessibleFields_address">Postal Address <div class="subinfo">To modify this, edit your <a href="/fr/user/account">personal information</a></div></label></div></div>
+                                    <div id="limited-pdf-options" class="limited">
+                        <div class="limited-fields">
+                            <div id="cv_download_options_inaccessibleFields"><div class="field checkbox " id="cv_download_options_inaccessibleFields_age_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_age" name="cv_download_options[inaccessibleFields][age]" disabled="disabled"    data-ng-model="editedWidget.age" data-ng-class="{loading: ($loading || $age_loading) }" data-toggle-show="editedWidget.age"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_age">Birthdate</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_url_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_url" name="cv_download_options[inaccessibleFields][url]" disabled="disabled"    data-ng-model="editedWidget.url" data-ng-class="{loading: ($loading || $url_loading) }" data-toggle-show="editedWidget.url"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_url">URL of my resume</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_experiences_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_experiences" name="cv_download_options[inaccessibleFields][experiences]" disabled="disabled"    data-ng-model="editedWidget.experiences" data-ng-class="{loading: ($loading || $experiences_loading) }" data-toggle-show="editedWidget.experiences"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_experiences">Experience</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_skills_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_skills" name="cv_download_options[inaccessibleFields][skills]" disabled="disabled"    data-ng-model="editedWidget.skills" data-ng-class="{loading: ($loading || $skills_loading) }" data-toggle-show="editedWidget.skills"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_skills">Skills</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_skillLevel_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_skillLevel" name="cv_download_options[inaccessibleFields][skillLevel]" disabled="disabled"    data-ng-model="editedWidget.skillLevel" data-ng-class="{loading: ($loading || $skillLevel_loading) }" data-toggle-show="editedWidget.skillLevel"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_skillLevel">Level</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_interests_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_interests" name="cv_download_options[inaccessibleFields][interests]" disabled="disabled"    data-ng-model="editedWidget.interests" data-ng-class="{loading: ($loading || $interests_loading) }" data-toggle-show="editedWidget.interests"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_interests">Interests</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_picture_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_picture" name="cv_download_options[inaccessibleFields][picture]" disabled="disabled"    data-ng-model="editedWidget.picture" data-ng-class="{loading: ($loading || $picture_loading) }" data-toggle-show="editedWidget.picture"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_picture">Profile picture</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_drivingLicence_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_drivingLicence" name="cv_download_options[inaccessibleFields][drivingLicence]" disabled="disabled"    data-ng-model="editedWidget.drivingLicence" data-ng-class="{loading: ($loading || $drivingLicence_loading) }" data-toggle-show="editedWidget.drivingLicence"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_drivingLicence">Driver's License</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_educations_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_educations" name="cv_download_options[inaccessibleFields][educations]" disabled="disabled"    data-ng-model="editedWidget.educations" data-ng-class="{loading: ($loading || $educations_loading) }" data-toggle-show="editedWidget.educations"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_educations">Education</label></div><div class="field checkbox " id="cv_download_options_inaccessibleFields_presentation_field"><input type="checkbox"                     id="cv_download_options_inaccessibleFields_presentation" name="cv_download_options[inaccessibleFields][presentation]" disabled="disabled"    data-ng-model="editedWidget.presentation" data-ng-class="{loading: ($loading || $presentation_loading) }" data-toggle-show="editedWidget.presentation"
+ value="1" checked="checked" /><label for="cv_download_options_inaccessibleFields_presentation">About Me </label></div></div>
+                            <div class="field">
+                                <hr>
+                                <label>You can also upload your own file (Your visitors can download it from your resume&#039;s web version)</label>
+                            </div>
+                        </div>
+                        <div id="premium-limitation-message">
+                            <p>
+                                This feature is for Premium members only
+                                <br>
+                                <a data-dyb-track-promo="limitation-advancedConfigPdf-switchToPremiumAccount" href="#modal/premium-offers?referer=pdf-preview">Switch to Premium Account</a>
+                            </p>
+                        </div>
+                    </div>
+                                            </div>
+        </div>
+        <a id="changedesign-shortcut" data-redirect-on-event="design-applied" href="#modal/design">Change design</a>
+        <div id="pdf-actions">
+            <div id="save-config" data-ng-class="{active: !settingsForm.$pristine}">
+                <button
+                    id="cancel-pdf-config"
+                    type="button"
+                    class="flat_bt cancel"
+                    data-ng-click="downloadSettings.resetForm(settingsForm)"
+                >
+                    Cancel changes
+                </button>
+                <button
+                    id="submit-pdf-config"
+                    type="submit"
+                    class="flat_bt ladda-button"
+                    data-ladda="downloadSettings.saving"
+                    data-size="s"
+                    data-color="blue"
+                    data-style="zoom-in"
+                >
+                    Save
+                </button>
+            </div>
+            <a
+                id="download-pdf-file"
+                class="flat_bt"
+                data-ng-class="{active: settingsForm.$pristine}"
+                                    href="/roman-schulte-sasse/cv/print/f_81mGhtcIjDVUlEiHxz"
+                    target="_blank"
+                                >
+                <i class="ion-ios-download"></i> Download PDF file
+            </a>
+        </div>
+    </form>
+</div>
+    </script>
+    </div>
+    </div>
+
+    
+        
+        <div id="edit-section" data-ng-class="{'active':resumeRendered}" data-metadatas-container data-ng-cloak data-ng-controller="widgetsEditionController">
+    <div id="moonwalkers" data-moonwalker="{ crawlersContainer: '#crawlers', crawlersBufferContainer: '#crawlers-buffer', crawlerWidth: 150 }">
+        <div id="walkers">
+            <div
+                data-shake
+                data-ng-repeat='editedWidget in maximized'
+                class="editbox {{editedWidget.getType() + ' ' + editedWidget.$type}}"
+                data-ng-class="{ loading: !editedWidget.$views.form, 'advised': formAdvisor.advices && formAdvisor.isOpen && editedWidget.$views.form }"
+                data-draggable="{ handle: '.drag-handler', axis: 'x', containment: '#moonwalkers', opacity: '0.85', zIndex: '100' }"
+            >
+                
+<div
+    >
+            <div class="advise-box" data-ng-if="formAdvisor.advices">
+    <a class="close-advise-box" data-ng-click="formAdvisor.close()" data-tooltip data-container="body" title="Close"  >
+        <i class="ion-android-close"></i>
+    </a>
+    <div class="advise-box-content" data-dyb-advice-box>
+        <div class="advise-box-title">
+            Nos conseils pour bien remplir cette information
+            <i class="ion-ios-lightbulb"></i>
+        </div>
+        <div data-ng-bind-html="formAdvisor.advices | trustAsHtml"></div>
+    </div>
+</div>
+        <div class="editbox-top drag-handler" data-ng-click="maximize(editedWidget, true)">
+        <h3 class="title">
+            <i class="dybicon-{{ editedWidget.getType() + (editedWidget.$type ? '-' + editedWidget.$type : '') }}"></i>
+            <span data-ng-bind="(editedWidget.title | limitTo:40) || (editedWidget.getType() + '.form.title' | i18n)"></span><span class="replacement-text"></span>
+        </h3>
+                    <a class="advise editbox-top-actions" data-ng-if="formAdvisor.advices" data-ng-click="formAdvisor.open()" title="Activate the advisor" >
+                <i class="ion-ios-lightbulb"></i>
+            </a>
+            <a class="minify editbox-top-actions" data-ng-click="minify(editedWidget); $event.stopPropagation();" title="Minimize">
+                <i class="ion-minus"></i>
+            </a>
+                <a class="cancel editbox-top-actions" data-ng-click="cancel(editedWidget); $event.stopPropagation();" title="Close">
+            <i class="ion-android-close"></i>
+        </a>
+    </div>
+
+    <div class="editbox-global-error" data-ng-if="editedWidget.$errors"><i class="icon-warning-sign"></i> Oops, this form contains errors</div>
+
+            <div id="editbox-loader">
+            <span>Loading</span>
+            <img src="/bundles/dyb/images/Common/loader.gif">
+        </div>
+
+        <div
+            class="editbox-content"
+            data-ng-if="editedWidget.$views.form"
+            data-bind-dynamic-html="editedWidget.$views.form"
+            data-dyb-adviced-form
+        >
+        </div>
+    </div>
+            </div>
+        </div>
+        <div id="crawlers">
+            <div
+                data-ng-repeat="editedWidget in minified | split:0:maxCrawlers"
+                data-ng-class="editedWidget.getType() + ' ' + editedWidget.$type"
+                class="editbox minified"
+            >
+                
+<div
+    >
+        <div class="editbox-top drag-handler" data-ng-click="maximize(editedWidget, true)">
+        <h3 class="title">
+            <i class="dybicon-{{ editedWidget.getType() + (editedWidget.$type ? '-' + editedWidget.$type : '') }}"></i>
+            <span data-ng-bind="(editedWidget.title | limitTo:12) || (editedWidget.getType() + '.form.title' | i18n)"></span><span class="replacement-text"></span>
+        </h3>
+                    <a class="maxify editbox-top-actions" data-ng-click="maximize(editedWidget); $event.stopPropagation();" title="Maximize">
+                <i class="ion-minus"></i>
+            </a>
+                <a class="cancel editbox-top-actions" data-ng-click="cancel(editedWidget); $event.stopPropagation();" title="Close">
+            <i class="ion-android-close"></i>
+        </a>
+    </div>
+
+    <div class="editbox-global-error" data-ng-if="editedWidget.$errors"><i class="icon-warning-sign"></i> Oops, this form contains errors</div>
+
+    </div>
+            </div>
+            <div id="crawlers-buffer" data-ng-bind='minified.length - maxCrawlers' data-ng-show='(minified.length - maxCrawlers) > 0'></div>
+        </div>
+    </div>
+            <div id="proofreading-panel" data-ng-class="{deployed: isOnUrl('#proofreadings'), minified: !(proofreadings | suggestionList | nbUndone) && !isOnUrl('#proofreadings')}" data-dyb-proofreaders-list data-ng-show="proofreadings.length > 0">
+    <a  id="proofreading-opener"
+        data-ng-href="#proofreadings"
+        >
+        <span class="notif" data-ng-show="proofreadings | suggestionList | nbUndone" data-ng-bind="proofreadings | suggestionList | nbUndone"></span>
+        <span data-ng-show="proofreadings | suggestionList | nbUndone">Improvement suggestions </span>
+        <i data-ng-show="!(proofreadings | suggestionList | nbUndone)" class="ion-ios-lightbulb"></i>
+        <i class="icon-angle-up"></i>
+    </a>
+    <div id="proofreading-content" data-dyb-improvements-tree-navigator>
+        <div data-ng-repeat="i in levels" class="panel pos{{i}} currentpos{{currentLevel}}">
+            <div data-ng-include="templates[i]" class="include-panel"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="proofreadings">
+    <div id="proofreaders" data-dyb-proofreaders-list>
+    <a class="panel-header" href="#home">
+        <span class="title">
+            Improvement suggestions 
+            <i class="ion-android-close"></i>
+        </span>
+    </a>
+    <div class="panel-content">
+        <a class="suggestion" href="#proofreadings/{{proofreading.id}}" data-ng-repeat="proofreading in proofreadings">
+            <span class="gravatar">
+                <img data-ng-src="{{ proofreading.proofreader.email | gravatar }}" />
+            </span>
+            <span class="name">
+                <span class="firstname" data-ng-bind="proofreading.proofreader.firstName"></span>
+                <span class="lastname" data-ng-bind="proofreading.proofreader.lastName"></span>
+            </span>
+            <span class="proofreading-msg" data-ng-bind="proofreading.message | truncate:100:'...'"></span>
+            <span class="legend"></span>
+            <span class="notif" data-ng-show="proofreading | suggestionList | nbUndone" data-ng-bind="proofreading | suggestionList | nbUndone"></span>
+            <span class="more"><i class="ion-ios-arrow-right"></i></span>
+        </a>
+        <a class="suggestion" id="proofreading-request-opener" href="#modal/quality-control">
+            <div class="desc">Invite your friends and contact to proofread your resume</div>
+        </a>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="proofreadings/proofreader">
+    <div id="proofreading" data-dyb-proofreading-list="route.params.id">
+    <div class="panel-header" data-ng-click="back();">
+        <span class="title">
+            <i class="ion-ios-arrow-left"></i>
+            <span data-ng-bind="proofreading.proofreader.firstName"></span>
+            <span data-ng-bind="proofreading.proofreader.lastName"></span>
+            <span class="notif" data-ng-show="proofreading | suggestionList | nbUndone" data-ng-bind="proofreading | suggestionList | nbUndone"></span>
+        </span>
+    </div>
+    <div class="panel-content" data-ng-if="proofreading" data-dyb-proofreading-actions>
+        <div class="gravatar">
+            <img data-ng-src="{{ proofreading.proofreader.email | gravatar }}" />
+        </div>
+        <div class="proofreading-msg" data-ng-bind-html="proofreading.message | nl2br"></div>
+        <div class="status"
+            data-container="body"
+            data-ng-click="setAcknowledged(proofreading.id)"
+            data-ng-class="{ acknowledged: isAcknowledged(proofreading) }"
+            data-tooltip
+            data-original-title="Mark as completed"><i class="ion-checkmark-circled"></i></div>
+        <div class="clearfix"></div>
+        <div class="suggestions-container">
+            <div class="suggestion element-{{$index}}" data-ng-repeat="suggestion in proofreading.suggestions" data-ng-class="suggestion.status">
+                <div class="todo-list">
+                    <i
+                        class="done-status"
+                        data-ng-class="{ 'ion-android-checkbox': suggestion.status==='done' }"
+                        data-ng-click="setDone(proofreading.id, suggestion.id)"
+                        data-container="body"
+                        data-tooltip
+                        data-placement="right"
+                        data-original-title="Mark done"></i>
+                </div>
+                <div class="suggestion-content">
+                    <span data-ng-if="suggestion.linkedWidget === 'cv'" class="suggestion-widget">Overall comment</span>
+                    <span data-ng-if="suggestion.linkedWidget !== 'cv'">
+                        <span  class="suggestion-widget" data-ng-if="getWidgetTitle(suggestion.linkedWidget)" data-ng-bind="getWidgetTitle(suggestion.linkedWidget)"></span>
+                        <span class="suggestion-widget deleted-widget" data-ng-if="!getWidgetTitle(suggestion.linkedWidget)">This item no longer exists</span>
+                    </span>
+                    <span class="suggestion-text" data-ng-bind-html="suggestion.text | nl2br"></span>
+                </div>
+                <div class="suggestion-actions">
+                    <i
+                        class="edit ion-edit"
+                        data-ng-click="requestWidgetEdition(suggestion.linkedWidget)"
+                        data-ng-if="suggestion.linkedWidget != 'cv' && getWidgetTitle(suggestion.linkedWidget)"
+                        data-container="body"
+                        data-tooltip
+                        data-original-title="Edit the content in question"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/ng-template" id="proofreadings/widget">
+    <div id="proofreading" data-dyb-widget-suggestions="route.params.id">
+    <div class="panel-header" data-ng-click="back();">
+        <span class="title">
+            <i class="ion-ios-arrow-left"></i>
+            <span data-ng-bind="getWidgetTitle(route.params.id)"></span>
+                        <a href="#home"><i class="ion-android-close"></i></a>
+        </span>
+    </div>
+    <div class="panel-content" data-dyb-proofreading-actions>
+        <div class="suggestions-container">
+            <div class="suggestion suggestion-widget element-{{$index}} clearfix" data-ng-repeat="suggestion in suggestions" data-ng-class="suggestion.status">
+                <div class="todo-list">
+                    <i
+                        class="done-status"
+                        data-ng-class="{ 'ion-android-checkbox': suggestion.status==='done' }"
+                        data-ng-click="setDone(suggestion.proofreading.id, suggestion.id)"
+                        data-tooltip
+                        data-container="body"
+                        data-placement="right"
+                        data-original-title="Mark done"></i>
+                </div>
+                <a  href="#proofreadings/{{ suggestion.proofreading.id }}"
+                    class="proofreader-info"
+                    data-ng-click=""
+                    data-tooltip
+                    data-container="body"
+                    data-original-title="See all suggestions"
+                    >
+                    <span class="gravatar">
+                        <img data-ng-src="{{ proofreading.proofreader.email | gravatar }}" />
+                    </span>
+                    <span class="firstname" data-ng-bind="suggestion.proofreader.firstName"></span>
+                    <span class="lastname" data-ng-bind="suggestion.proofreader.lastName"></span>
+                </a>
+                <span class="suggestion-text" data-ng-bind-html="suggestion.text | nl2br"></span>
+                <div class="suggestion-actions">
+                    <i
+                        class="edit ion-edit"
+                        data-ng-click="requestWidgetEdition(suggestion.linkedWidget)"
+                        data-ng-if="suggestion.linkedWidget != 'cv' && getWidgetTitle(suggestion.linkedWidget)"
+                        data-container="#proofreading"
+                        data-tooltip
+                        data-container="body"
+                        data-original-title="Edit the content in question"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</script>        <div id="followup"
+    class="dyb-anim-fadedelay popover top"
+    data-ng-controller="followupController"
+    data-ng-show="maximized.length === 0 && showFollowup"
+    data-outside-click="hide()"
+    data-ng-cloak
+>
+    <div class="popover-content"  data-ng-if="maximized.length === 0 && showFollowup">
+        <i class="ion-android-close close" data-ng-click="hide()"></i>
+        <h3 class="title">Complete your resume</h3>
+        <button data-ng-repeat="type in followUpDatas.datas" class="addContentButton addContentButton_{{ type }}" data-ng-click="trackSuggestionEvent(); followUpAction(type);">
+            {{ type + '.title' | i18n }}
+        </button>
+    </div>
+</div>
+</div>
+        
+    <div
+        class="onboarding"
+        data-ng-show="campaignIsActive && !hideInitialHelp && hasNoWidgets()"
+        data-dyb-help-campaign='{ "campaign": "cv-onboarding" }'
+        data-ng-cloak>
+        <div class="overlay"></div>
+                <div class="onboarding-step"
+             id="addcontent-step"
+             data-dyb-help-campaign='{"campaign": "cv-onboarding", "step": 1, "stepSlug": "add-content"}'
+             data-ng-show="campaignStepIsActive"
+            >
+            <h2>Where to start?</h2>
+            <p>Start by adding content to your resume. Just click on the button and we will walk you through the process!</p>
+            <button class="flat_bt" name="next-button-step-1" data-ng-click="nextStep();">Next</button>
+            <a class="cancel-tour" data-ng-click="quitCampaign();">Stop the tour</a>
+        </div>
+                <div class="onboarding-step"
+             id="completion-step"
+             data-dyb-help-campaign='{"campaign": "cv-onboarding", "step": 2, "stepSlug": "completion"}'
+             data-ng-show="campaignStepIsActive"
+            >
+            <h2>How to make sure I didn&#039;t miss anything out?</h2>
+            <p>Some information are compulsory for your readers. To make sure you have not forgotten anything, click on the &quot;magic bar&quot; of DoYouBuzz and get all the advise you need.</p>
+            <button class="flat_bt" name="finish-button-step-6" data-ng-click="nextStep();">OK, got it!</button>
+        </div>
+    </div>
+
+<div
+    class="onboarding"
+    data-dyb-help-campaign-watcher
+    data-ng-show="!hideInitialHelp && !hasActiveCampaign && hasNoWidgets()"
+    data-ng-cloak>
+    <div class="overlay"></div>
+    <div id="empty-resume-help" data-ng-show="!hideInitialHelp && !hasActiveCampaign && hasNoWidgets()">
+        Let&#039;s start writing my resume!<i class="ion-arrow-up-c"></i>
+    </div>
+</div>
+        <div data-cv-editor class="cvEditorContainer" > </div>
+        <div data-ng-show="newDesign" data-ng-cloak id="theme-loader" class="cvEditor__loaderFull">
+            <div class="cvEditor__loaderSpin"></div>
+        </div>
+
+        <script type="text/ng-template" id="cv-view">
+                <div class="cv" data-cv data-rendering-mode="web">
+        <style>
+            .colorCssLoaded {
+                display: block;
+                visibility: hidden;
+            }
+        </style>
+        <div class="colorCssLoaded">1559564607</div>
+        
+            <link rel="stylesheet" href="/bundles/dyb/assets/css/cv/structures/web/profile-left-top_col-60-40.css?v=5.1.25">
+
+                            <link rel="stylesheet" key="style-1" href="/var/cache/css/cv/designs/minimal2/web/profile-left-top_col-60-40/50A3D9.css?v=5.1.25">
+                    <header class="header">
+        <div class="header__content">
+                <div class="widget widget_userName"      >
+            <h1 class="userName"><span class="userName__firstName" itemprop="givenName">Roman</span> <span class="userName__lastName" itemprop="familyName">Schulte-Sasse</span></h1>
+
+    </div>
+
+                <div class="widget widget_title"                         widget-element='{"id":"title","title":"title.title"}'
+             >
+            <h2 class="cvTitle">Data Scientist</h2>
+
+    </div>
+
+                <div class="widget widget_tags"                         widget-element='{"id":"tags","title":"Keywords"}'
+             >
+                    <div class="widgetTags__item">data scientist</div>
+            <div class="widgetTags__item">software engineer</div>
+            <div class="widgetTags__item">machine learning scientist</div>
+            <div class="widgetTags__item"></div>
+    
+    </div>
+
+        </div>
+        <div class="subHeader">
+            <div class="subHeader__content">
+                    <div class="widget widget_menu"      >
+            <div class="menu">
+                <a class="menu__item menu__item_home menu__item_current" href="https://www.doyoubuzz.com/roman-schulte-sasse">
+            <span class='menu__itemLegend'>Home</span>
+        </a>
+                    <a class="menu__item menu__item_experiences" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs">
+                <span class='menu__itemLegend'>Experience</span>
+            </a>
+                    <a class="menu__item menu__item_educations" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/trainings">
+                <span class='menu__itemLegend'>Education</span>
+            </a>
+                    <a class="menu__item menu__item_skills" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/skills">
+                <span class='menu__itemLegend'>Skills</span>
+            </a>
+                    <a class="menu__item menu__item_portfolios" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/portfolios">
+                <span class='menu__itemLegend'>Portfolios</span>
+            </a>
+                    <a class="menu__item menu__item_interests" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/hobbies">
+                <span class='menu__itemLegend'>Interests</span>
+            </a>
+            </div>
+
+    </div>
+
+                    <div class="widget widget_download"      >
+            <a class="downloadlink" data-download-cv href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/download">Download my PDF resume</a>
+
+    </div>
+
+                
+            </div>
+        </div>
+    </header>
+        
+    <div class="columns">
+            <div class="columns__column1">
+            <div class="widget widget_avatar"                         widget-element='{"id":"userInformation","title":"avatar.title"}'
+             >
+            <div class="widgetAvatar__wrapper">
+        <img class="widgetAvatar__avatar" src="https://www.doyoubuzz.com/var/users/_/2019/5/25/16/1839997/avatar/1905824/avatar_cp_big.jpg?t=1559564607" itemprop="image"  alt="Roman Schulte-Sasse">
+    </div>
+
+    </div>
+
+            <div class="widget widget_userInformation"                         widget-element='{"id":"userInformation","title":"Infos"}'
+             >
+                                <div class="widgetUserInfo__item widgetUserInfo__item_age">
+                30 years old 
+            </div>
+                                    <div class="widgetUserInfo__item widgetUserInfo__item_drivingLicence">
+                Driver&#039;s License
+            </div>
+                                                    <div class="widgetUserInfo__item widgetUserInfo__item_location">
+                                        Germany                                    </div>
+                        
+    </div>
+
+            <div class="widget widget_contact"                         widget-element='{"id":"contacts","title":"Contact"}'
+             >
+            <div class="contactsBox__opener">
+        <a class="contactsBox__openerLink" data-modal target="_blank" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/contacts/contact_me">Contact me</a>
+    </div>
+
+    </div>
+
+            <div class="widget widget_professionalPosition"                         widget-element='{"id":"professionalPosition","title":"Professional Status"}'
+             >
+                    <div class="widget__title">
+            Professional Status
+        </div>
+        <div class="widgetProfessionalPosition__status">
+        Nearing graduation
+    </div>
+    <div class="widgetProfessionalPosition__availability widgetProfessionalPosition__availability_OPEN">
+        Open to opportunities
+    </div>
+
+    </div>
+
+            <div class="widget widget_presentation"                         widget-element='{"id":"presentation","title":"About Me "}'
+             >
+                    <div class="widget__title widget__title_presentation">About Me </div>
+        <div class="widgetElement__text">
+        I am a passionate software developer and machine learning enthusiast, currently working in computational Biology. With my work, I want to make a difference and learn new things along the way. <br />
+I am amazed by nature and want to understand how these systems work.
+    </div>
+
+    </div>
+
+            <div class="widget widget_links"                         widget-element='{"id":"links","title":"My Links"}'
+             >
+                    <div class="widget__title">My Links</div>
+                <a class="widgetLinks__item widgetLinks__item_github" href="https://github.com/schulter" target="_blank">Github</a>
+            <a class="widgetLinks__item widgetLinks__item_linkedin" href="https://www.linkedin.com/in/roman-schulte-sasse-9b568a155/" target="_blank">LinkedIn</a>
+    
+    </div>
+
+    </div>
+
+            <div class="columns__column2">
+            <div class="widget widget_experiences"                         widget-portlet="experiences"
+             >
+                <div class="widget__title  widget__title_experiences">
+        <a class="widget__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs">Experience</a>
+    </div>
+
+                    <div class="widgetElement widgetElement_topInfos"     widget-element='{"id": "experiences-6402592", "title": &quot;Student Research Assistant&quot; }'
+    itemscope itemtype ="http://schema.org/Event"
+ data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+            <div class="widgetElement__header widgetElement__header_haslogo">
+                    <div class="widgetElement__headerPart">
+            <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs/humboldt-universitat-zu-berlin" itemprop="name" content="Student Research Assistant">Student Research Assistant</a>
+    </h3>
+
+        <div class="widgetElement__subtitle">
+        <div class="widgetElement__subtitleItem widgetElement__subtitleItem_company">Humboldt Universität zu Berlin</div>
+                    <div class="widgetElement__subtitleItem widgetElement__subtitleItem_date">                    August 2015
+             to                         December 2015
+        <meta itemprop="startDate" content="August 1, 2015 19:03" />
+                <meta itemprop="endDate" content="December 1, 2015 19:03" />
+    </div>
+                                    </div>
+
+            </div>
+        <div class="widgetElement__headerPart">
+                        <img class="widgetElement__logo" src="/var/f/f-/81/f-81eaS79pXmkJ0N4nQlMFgTbjcEGowxVOKZ6qrYiC5PfB_mid.png">
+    
+        </div>
+    
+    </div>
+
+                                <div class="widgetElement__section" data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+                                    <ul class="widgetElement__list widgetElement__list_missions">
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Developed motion tracking system for ultrasound images in Matlab.</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">The work led to a semi-automated tracking software that was used in scientific studies of tendon adaptation to training in the sports faculty of HU Berlin.</li>
+                                            </ul>
+                            </div>
+                        
+            
+            
+            
+            <div class="widgetElement__microData" itemprop="organizer" itemscope itemtype="http://www.schema.org/Organization">
+        <meta itemprop="name" content="Humboldt Universität zu Berlin"/>
+                    <meta itemprop="logo" content="/var/f/f-/81/f-81eaS79pXmkJ0N4nQlMFgTbjcEGowxVOKZ6qrYiC5PfB_mid.png"/>
+                    </div>
+    <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content=""/>
+            </div>
+
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos"     widget-element='{"id": "experiences-6402612", "title": &quot;Student Research Assistant&quot; }'
+    itemscope itemtype ="http://schema.org/Event"
+ data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+            <div class="widgetElement__header widgetElement__header_haslogo">
+                    <div class="widgetElement__headerPart">
+            <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs/max-planck-institute-for-molecular-genetics" itemprop="name" content="Student Research Assistant">Student Research Assistant</a>
+    </h3>
+
+        <div class="widgetElement__subtitle">
+        <div class="widgetElement__subtitleItem widgetElement__subtitleItem_company">Max Planck Institute for molecular Genetics</div>
+                    <div class="widgetElement__subtitleItem widgetElement__subtitleItem_date">                    January 2016
+             to                         November 2016
+        <meta itemprop="startDate" content="January 1, 2016 19:02" />
+                <meta itemprop="endDate" content="November 1, 2016 19:02" />
+    </div>
+                                    </div>
+
+            </div>
+        <div class="widgetElement__headerPart">
+                        <img class="widgetElement__logo" src="/var/f/f-/81/f-81v_Ksxu3w-69So0rWHzD2QiNVtL5XPey8FRcqYMJ7Cn_mid.jpeg">
+    
+        </div>
+    
+    </div>
+
+                                <div class="widgetElement__section" data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+                                    <ul class="widgetElement__list widgetElement__list_missions">
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">I developed unsupervised deep learning framework to recognize patterns in DNA sequences as master thesis.</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">I first got into touch with deep learning frameworks Theano and Tensorflow for that work.</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Worked on convolutional Restricted Boltzmann Machines (cRBMs) which are part of the earlier generation of deep learning models</li>
+                                            </ul>
+                            </div>
+                        
+            
+            
+            
+            <div class="widgetElement__microData" itemprop="organizer" itemscope itemtype="http://www.schema.org/Organization">
+        <meta itemprop="name" content="Max Planck Institute for molecular Genetics"/>
+                    <meta itemprop="logo" content="/var/f/f-/81/f-81v_Ksxu3w-69So0rWHzD2QiNVtL5XPey8FRcqYMJ7Cn_mid.jpeg"/>
+                    </div>
+    <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content=""/>
+            </div>
+
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos"     widget-element='{"id": "experiences-6402600", "title": &quot;Developer&quot; }'
+    itemscope itemtype ="http://schema.org/Event"
+ data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+            <div class="widgetElement__header widgetElement__header_haslogo">
+                    <div class="widgetElement__headerPart">
+            <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs/fumanoids" itemprop="name" content="Developer">Developer</a>
+    </h3>
+
+        <div class="widgetElement__subtitle">
+        <div class="widgetElement__subtitleItem widgetElement__subtitleItem_company">FUmanoids</div>
+                    <div class="widgetElement__subtitleItem widgetElement__subtitleItem_date">                    January 2013
+             to                         September 2015
+        <meta itemprop="startDate" content="January 1, 2013 18:31" />
+                <meta itemprop="endDate" content="September 1, 2015 18:31" />
+    </div>
+                                    </div>
+
+            </div>
+        <div class="widgetElement__headerPart">
+                        <img class="widgetElement__logo" src="/var/f/f-/81/f-819wM4G_BRAiZLDzg0qkUryHPXCbKFa2J3QSon7lspEm_mid.png">
+    
+        </div>
+    
+    </div>
+
+                                <div class="widgetElement__section" data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+                                    <ul class="widgetElement__list widgetElement__list_missions">
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Developed localization framework for humanoid soccer robots</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Developed a machine learning approach for ball detection on the pitch (SVM based)</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Implemented basic machine learning models in the framework (support vector machines, neural networks, linear models)</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Programmed in C++ with own framework and focus on high performance</li>
+                                            </ul>
+                            </div>
+                        
+            
+            
+                    <a href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs/fumanoids" class="widgetElement_knowMore">
+            Learn more
+        </a>
+    
+            <div class="widgetElement__microData" itemprop="organizer" itemscope itemtype="http://www.schema.org/Organization">
+        <meta itemprop="name" content="FUmanoids"/>
+                    <meta itemprop="logo" content="/var/f/f-/81/f-819wM4G_BRAiZLDzg0qkUryHPXCbKFa2J3QSon7lspEm_mid.png"/>
+                            <meta itemprop="url" content="http://www.fumanoids.de/"/>
+            </div>
+    <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content=""/>
+            </div>
+
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos"     widget-element='{"id": "experiences-6402590", "title": &quot;Intern&quot; }'
+    itemscope itemtype ="http://schema.org/Event"
+ data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+            <div class="widgetElement__header widgetElement__header_haslogo">
+                    <div class="widgetElement__headerPart">
+            <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/jobs/ivu-traffic-technologies" itemprop="name" content="Intern">Intern</a>
+    </h3>
+
+        <div class="widgetElement__subtitle">
+        <div class="widgetElement__subtitleItem widgetElement__subtitleItem_company">IVU Traffic Technologies</div>
+                    <div class="widgetElement__subtitleItem widgetElement__subtitleItem_date">                    May 2009
+             to                         August 2009
+        <meta itemprop="startDate" content="May 1, 2009 18:21" />
+                <meta itemprop="endDate" content="August 1, 2009 18:21" />
+    </div>
+                                    </div>
+
+            </div>
+        <div class="widgetElement__headerPart">
+                        <img class="widgetElement__logo" src="/var/f/f-/81/f-819sfMWGH6mnqBR7pZUItyCO84hjozVlaT50eKviF_XL_mid.jpeg">
+    
+        </div>
+    
+    </div>
+
+                                <div class="widgetElement__section" data-do-not-break-before=".widgetElement__listItem,.widgetElement__text">
+                                    <ul class="widgetElement__list widgetElement__list_missions">
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">Helped in the build team</li>
+                                                    <li class="widgetElement__listItem widgetElement__listItem_missions">First experience with subversion, maven, make</li>
+                                            </ul>
+                            </div>
+                        
+            
+            
+            
+            <div class="widgetElement__microData" itemprop="organizer" itemscope itemtype="http://www.schema.org/Organization">
+        <meta itemprop="name" content="IVU Traffic Technologies"/>
+                    <meta itemprop="logo" content="/var/f/f-/81/f-819sfMWGH6mnqBR7pZUItyCO84hjozVlaT50eKviF_XL_mid.jpeg"/>
+                    </div>
+    <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content=""/>
+            </div>
+
+    </div>
+
+    
+
+    </div>
+    <div class="widget widget_portfolios"                         widget-portlet="portfolios"
+             >
+                <div class="widget__title  widget__title_portfolios">
+        <a class="widget__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/portfolios">Portfolios</a>
+    </div>
+
+                    <div class="widgetElement widgetElement_topInfos"     widget-element='{"id": "portfolios-335505", "title": &quot;Unsupervised learning of DNA sequence features using a convolutional restricted Boltzmann machine&quot; }'
+    itemscope itemtype ="http://www.schema.org/CreativeWork"
+>
+        <div class="widgetElement__header">
+                <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/portfolios/unsupervised-learning-of-dna-sequence-features-using-a-convolutional-restricted-boltzmann-machine">Unsupervised learning of DNA sequence features using a convolutional restricted Boltzmann machine</a>
+    </h3>
+
+        </div>
+            <div class="widgetElement__media">
+        <a class="portfolioDownloadDoc" target="_blank" href="/var/f/f-/81/f-81rtCH-O1jnlfc26REhV7MN9Xba3SQioFq_eGzTwx_master.pdf">Download</a>
+    </div>
+
+            
+            
+            
+                    <a href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/portfolios/unsupervised-learning-of-dna-sequence-features-using-a-convolutional-restricted-boltzmann-machine" class="widgetElement_knowMore">
+            Learn more
+        </a>
+    
+                    <meta itemprop="associatedMedia" content=''>
+    
+    </div>
+
+    
+
+    </div>
+    <div class="widget widget_interests"                         widget-portlet="interests"
+             >
+                <div class="widget__title  widget__title_interests">
+        <a class="widget__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/hobbies">Interests</a>
+    </div>
+
+                    <div class="widgetElement widgetElement_topInfos"     widget-element='{"id": "interests-1676402", "title": &quot;Sports&quot; }' data-do-not-break-before=".widgetElement__listItem"
+ widget-element='{"id": "interests-1676402", "title": &quot;Sports&quot; }' data-do-not-break-before=".widgetElement__listItem">
+        <div class="widgetElement__header">
+                <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/hobbies">Sports</a>
+    </h3>
+
+        </div>
+            <ul class="widgetElement__list">
+                    <li class="widgetElement__listItem">Beach Volleyball</li>
+                    <li class="widgetElement__listItem">Skiing</li>
+                    <li class="widgetElement__listItem">Hiking</li>
+            </ul>
+
+    </div>
+
+    
+
+    </div>
+
+    </div>
+    <div class="columns__column3">
+            <div class="widget widget_skills"                         widget-portlet="skills"
+             >
+                <div class="widget__title  widget__title_skills">
+        <a class="widget__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/skills">Skills</a>
+    </div>
+
+                    <div class="widgetElement widgetElement_topInfos" widget-element='{"id": "skills-16569306", "title": &quot;Programming Languages&quot; }' data-do-not-break-before=".widgetElement__listItem">
+        <div class="widgetElement__header">
+                <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/skills">Programming Languages</a>
+    </h3>
+
+        </div>
+            <ul class="widgetElement__list skillsBulletList">
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                Python
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Expert
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                R
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Good
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                C++
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Intermediate
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                <div class="skillStarLevel__star skillStarLevel__star_half"></div>
+                                                                                                        <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                Java
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Intermediate
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                Matlab
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Intermediate
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            </div>
+                </li>
+            </ul>
+
+        
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos" widget-element='{"id": "skills-16569462", "title": &quot;Languages&quot; }' data-do-not-break-before=".widgetElement__listItem">
+        <div class="widgetElement__header">
+                <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/skills">Languages</a>
+    </h3>
+
+        </div>
+            <ul class="widgetElement__list skillsBulletList">
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                German: Native
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Expert
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                English: Fluent
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Expert
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                French: Fluent
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Expert
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            </div>
+                </li>
+            </ul>
+
+        
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos" widget-element='{"id": "skills-16569469", "title": &quot;Communication&quot; }' data-do-not-break-before=".widgetElement__listItem">
+        <div class="widgetElement__header">
+                <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/skills">Communication</a>
+    </h3>
+
+        </div>
+            <ul class="widgetElement__list skillsBulletList">
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                Presentations
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Advanced
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            </div>
+                </li>
+                    <li class="widgetElement__listItem skillsBulletList__item skillsBulletList__item_leveled">
+                Scientific Writing
+                    
+                                            <div class="skillLevel skillStarLevel">
+            <div class="skillLevel__legend">
+                Good
+            </div>
+                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                                                            <div class="skillStarLevel__star"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            <div class="skillStarLevel__star skillStarLevel__star_empty"></div>
+                                                                                            </div>
+                </li>
+            </ul>
+
+        
+    </div>
+
+    
+
+    </div>
+    <div class="widget widget_educations"                         widget-portlet="educations"
+             >
+                <div class="widget__title  widget__title_educations">
+        <a class="widget__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/trainings">Education</a>
+    </div>
+
+                    <div class="widgetElement widgetElement_topInfos"     data-unbreakable
+    widget-element='{"id": "educations-3888242", "title": &quot;PhD Program (Max Planck Institute for molecular Genetics)&quot; }'
+    itemscope itemtype ="http://schema.org/EducationEvent"
+ >
+        <div class="widgetElement__header">
+                        <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/trainings/phd-program-max-planck-institute-for-molecular-genetics-2017" itemprop="name" content="PhD Program">PhD Program</a>
+    </h3>
+
+        <h4 class="widgetElement__subtitle">Max Planck Institute for molecular Genetics</h4>
+      
+    <div class="widgetElement__infos">
+        <div class="widgetElement__info">                    Since                          January 2017
+        <meta itemprop="startDate" content="January 1, 2017 18:03" />
+        </div>
+    </div>
+
+        </div>
+                    <div class="widgetElement__text" itemprop="description">I use machine learning models to learn about molecular mechanisms leading to disease. For my work, I use graph deep learning tools to find genes involved in cancer progression.</div>
+    
+            
+            
+            <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content="Max Planck Institute for molecular Genetics"/>
+        <meta itemprop="address" content="Max Planck Institute for molecular Genetics"/>
+    </div>
+
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos"     data-unbreakable
+    widget-element='{"id": "educations-3888192", "title": &quot;Master of Science (Freie Universit\u00e4t Berlin)&quot; }'
+    itemscope itemtype ="http://schema.org/EducationEvent"
+ >
+        <div class="widgetElement__header">
+                        <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/trainings/master-of-science-freie-universitat-berlin-2013" itemprop="name" content="Master of Science">Master of Science</a>
+    </h3>
+
+        <h4 class="widgetElement__subtitle">Freie Universität Berlin</h4>
+      
+    <div class="widgetElement__infos">
+        <div class="widgetElement__info">                    2013
+             to                         2016
+        <meta itemprop="startDate" content="January 31, 2013 17:59" />
+                <meta itemprop="endDate" content="January 31, 2016 17:59" />
+    </div>
+    </div>
+
+        </div>
+                    <div class="widgetElement__text" itemprop="description">Computer Science master during which I took courses on machine learning, image-processing and statistics.</div>
+    
+            
+            
+            <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content="Freie Universität Berlin"/>
+        <meta itemprop="address" content="Freie Universität Berlin"/>
+    </div>
+
+    </div>
+
+                <div class="widgetElement widgetElement_topInfos"     data-unbreakable
+    widget-element='{"id": "educations-3888191", "title": &quot;Bachelor Computer Science (Freie Universit\u00e4t Berlin)&quot; }'
+    itemscope itemtype ="http://schema.org/EducationEvent"
+ >
+        <div class="widgetElement__header">
+                        <h3 class="widgetElement__title">
+        <a class="widgetElement__titleLink" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/trainings/bachelor-degree-freie-universitat-berlin-2009" itemprop="name" content="Bachelor Computer Science">Bachelor Computer Science</a>
+    </h3>
+
+        <h4 class="widgetElement__subtitle">Freie Universität Berlin</h4>
+      
+    <div class="widgetElement__infos">
+        <div class="widgetElement__info">                    2009
+             to                         2013
+        <meta itemprop="startDate" content="January 31, 2009 17:56" />
+                <meta itemprop="endDate" content="January 31, 2013 17:56" />
+    </div>
+    </div>
+
+        </div>
+                    <div class="widgetElement__text" itemprop="description">I studied computer science and took courses on machine learning and computer vision</div>
+    
+            
+            
+            <div class="widgetElement__microData" itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <meta itemprop="name" content="Freie Universität Berlin"/>
+        <meta itemprop="address" content="Freie Universität Berlin"/>
+    </div>
+
+    </div>
+
+    
+
+    </div>
+
+    </div>
+    </div>
+
+        <div class="footer">
+        <div class="footer__content">
+                <div class="widget widget_share"      >
+                Share this resume on :
+            <a class="shareItem shareItem_twitter" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/share/twitter">twitter</a>
+            <a class="shareItem shareItem_facebook" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/share/facebook">facebook</a>
+            <a class="shareItem shareItem_linkedin" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/share/linkedin">linkedin</a>
+            <a class="shareItem shareItem_viadeo" href="https://www.doyoubuzz.com/roman-schulte-sasse/cv/share/viadeo">viadeo</a>
+    
+    </div>
+
+                        <a class="dybIncentive" href="/fr/">
+            Resume created on <img src="/bundles/dyb/images/Cv/doyoubuzz.png" alt="DoYouBuzz">
+        </a>
+    
+        </div>
+    </div>
+
+
+        
+            <script src="/bundles/dyb/assets/js/cv/view.js?v=5.1.25"></script>
+
+    </div>
+
+        </script>
+
+    </div>
+
+    <div class="white-popup-block mfp-hide" id="portfolio-limit-popup">
+	    <h1 class="title">Further portfolio are for Premium users only</h1>
+    <p class="content">Upgrade to Visibility Premium Account to enjoy unlimited portfolios.</p>
+    <div class="bottom">
+    			    <a
+	            data-dyb-track-promo="limitation-portfolios-switchToPremium"
+	            class="flat_bt"
+	            href="#modal/premium-offers?referer=incentivePopup">Switch to Visibility Premium Account</a>
+		    <a class="flat_bt cancel mfp-inside-closer">No thanks</a>
+	    	</div>
+</div>    <div class="white-popup-block mfp-hide" id="generic-popup">
+	    <h1 class="title"></h1>
+    <p class="content"></p>
+    <div class="bottom">
+    			    <a class="flat_bt primary-bt">Confirm</a>
+		    <a class="flat_bt cancel mfp-inside-closer">Cancel</a>
+	    	</div>
+</div>    <div class="white-popup-block mfp-hide" id="unknown-error">
+	    <h1 class="title">An error occured</h1>
+    <p class="content">Try to reload the page and start again. If your problem is not solved, please <a href="http://aide.doyoubuzz.com/help-center/contact-us/how-to-contact-us">contact support</a>.</p>
+</div>    <div class="white-popup-block mfp-hide" id="unsafe-nav-popup">
+	    <h1 class="title">Some widgets are still being edited.</h1>
+    <p>You should save your modifications before leaving this page.</p>
+</div>    <div class="white-popup-block mfp-hide" id="cannot-upload-pdf-error">
+	    <h1 class="title">You can&#039;t upload your own paper resume</h1>
+    <p class="content">Upgrade to our Visibility Premium offer to enjoy this feature</p>
+</div>
+                
+    <script>
+        </script>
+            <div id="dyb-help"><div>
+    		</div>
+        
+                
+        <script>
+            if (window.trackingParam) {
+                var _gaq = _gaq || [],
+                    i;
+                if (trackingParam.dyb.memberType !== 'visitor') {
+                                        _gaq.push(['dyb._deleteCustomVar', 3]);
+                }
+                _gaq.push(['dyb._setCustomVar', 3, "Member_type", trackingParam.dyb.memberType, 3]);
+                if (trackingParam.dyb.professionalStatus) {
+                    _gaq.push(['dyb._setCustomVar', 5, "Professionnal_status", trackingParam.dyb.professionalStatus, 2]);
+                }
+                if (trackingParam.dyb.cvType) {
+                    _gaq.push(['dyb._setCustomVar', 1, "Cv_type", trackingParam.dyb.cvType, 3]);
+                }
+                if (trackingParam.dyb.locale) {
+                    _gaq.push(['dyb._setCustomVar', 2, "Locale", trackingParam.dyb.locale, 3]);
+                }
+                _gaq.push(['dyb._trackPageview', trackingParam.dyb.trackedUrl]);
+                if (!trackingParam.stats.blockStatsTracking && trackingParam.stats.trackedUrl) {
+                    _gaq.push(['stats._trackPageview', trackingParam.stats.trackedUrl]);
+                }
+            }
+        </script>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"77627f5098","applicationID":"3254398","transactionName":"Y1NQNUAFVhEEVRJbCloZcRRBEFcPSlUQ","queueTime":0,"applicationTime":344,"atts":"TxRHQwgfRU5HV0QIHklL","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
